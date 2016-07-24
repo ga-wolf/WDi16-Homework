@@ -4,7 +4,9 @@
 1. Repository Setup;
 2. Do Your Homework;
 3. Submit Your Homework.
+
 ___
+
 ### 1. Repository Setup
 
 You only need to do this part once, not every time you're submitting homework!
