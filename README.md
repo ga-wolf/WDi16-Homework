@@ -22,7 +22,7 @@ You only need to do this part once, not every time you're submitting homework!
     + `git clone url_of_your_fork_on_github` (where `url_of_your_fork_on_github` is the URL you copied after hitting 'Clone or Download', above).
 - **Add an upstream remote repository**
     +  *Creating an upstream remote links the local repository on your computer to this repository on Github*
-    + `cd WDI15_Homework`
+    + `cd WDI16-Homework`
     + `git remote add upstream https://github.com/ga-wolf/WDi16_Homework`
     + `git pull upstream master`
 
@@ -31,7 +31,7 @@ You only need to do this part once, not every time you're submitting homework!
 You should put each night's homework in a new folder within the appropriate directory of your homework repo. So, for day two, where you have two tasks ("Calculator" and "Strings"), you might do something like this:
 
 1. Open Terminal/iTerm2;
-2. Go to your local homework repo (eg, `cd Projects/general-assembly/WDi16_Homework`);
+2. Go to your local homework repo (eg, `cd Projects/general-assembly/WDi16-Homework`);
 3. From here, go to the folder matching your name within that repo, and the appropriate week (eg, `groucho_marx/week_01`);
 4. Create new folders for each of the day's homework tasks: (eg `mkdir calculator` and `mkdir strings`);
 5. Create the files necessary to complete the homework in their respective directories;
