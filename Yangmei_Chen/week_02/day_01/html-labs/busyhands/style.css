@@ -1,0 +1,75 @@
+* {
+  box-sizing: border-box; margin:0; padding:0;
+}
+@import url(https://fonts.googleapis.com/css?family=Roboto:500);
+
+header{
+  height: 80px;
+  background: black;
+  color: ghostwhite;
+  font: 1.2em 'Roboto', sans-serif;
+  padding: 0 2em;
+}
+nav li {
+  display: inline-block;
+  line-height: 80px;
+  padding: 0 1em;
+}
+nav a {
+  text-decoration: none;
+  color: ghostwhite;
+}
+.container {
+  width: 960px;
+  margin: 0 auto;
+  background-color: gainsboro;
+}
+#logo {
+  float: left;
+  padding: 2em 0;
+}
+#socialNav {
+  float: right;
+}
+.requestQuote {
+  border: 3px inset;
+  margin: 1em 0;
+}
+.requestQuote img {
+  float: right;
+  padding: .5em;
+}
+.requestText {
+  float: left;
+  width: 700px;
+  padding: 1em;
+}
+.columns div {
+  float: left;
+  width: 30%;
+  margin: 1.66%;
+}
+a {
+  text-decoration: none;
+  color: #51a4d6;
+}
+footer{
+  background-color: black;
+  color: #989ea1;
+  padding: 2em;
+  line-height: normal;
+}
+footer div{
+  float: left;
+  width: 33%;
+  padding: 0 2em;
+}
+footer p{
+  color: #989ea1;
+  font-size: .9em;
+}
+.clearfix:after{
+  content: "";
+  clear: both;
+  display: block;
+}
