@@ -1,0 +1,202 @@
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+body {
+  margin: 0;
+  font-family: 'Roboto', Helvetica, Aria, sans-serif;
+  font-weight: 100;
+  line-height: 1.6;
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.homeIcon {
+  display: inline-block;
+  position: fixed;
+  top: 18px;
+  left: 5%;
+  height: 60px;
+  width: 60px;
+  background-color: #F8DA59;
+  z-index: 1;
+  text-align: center;
+  padding-top: 5px;
+}
+
+header {
+  background: #F8DA59;
+  width: 100%;
+}
+
+nav {
+  width: 70%;
+  margin: 0 auto;
+}
+
+nav h1 {
+  float: left;
+  line-height: 100px;
+  margin: 0;
+}
+
+nav ul {
+  float: right;
+  line-height: 100px;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+
+}
+
+nav ul li a {
+  text-decoration: none;
+  margin-left: 10px;
+  padding-top: 5px;
+}
+
+a, a:visited, a:active {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #3385ff;
+  border-top: solid 1px #3385ff;
+}
+
+.homeIcon a:hover {
+  border: none;
+}
+
+.banner {
+  height: 500px;
+  overflow: hidden;
+}
+
+.banner-image {
+  height: 500px;
+  background-image: url("images/bio1.jpg");
+  opacity: 0.9;
+  background-size: cover;
+  background-position: top;
+  transition: 1s;
+  -webkit-filter: blur(2px);
+}
+
+.banner-image:hover {
+  transform: scale(1.3);
+  transition: 1s;
+  -webkit-filter: blur(0px);
+}
+
+.banner-image2 {
+  height: 500px;
+  background-image: url("images/bio2.jpg");
+  opacity: 0.9;
+  background-size: cover;
+  transition: 1s;
+  -webkit-filter: blur(2px);
+}
+
+.banner-image2:hover {
+  transform: scale(1.3);
+  transition: 1s;
+  -webkit-filter: blur(0px);
+}
+
+.banner-image3 {
+  height: 500px;
+  background-image: url("images/bio3.jpg");
+  opacity: 0.9;
+  background-size: cover;
+  transition: 1s;
+  -webkit-filter: blur(2px);
+}
+
+.banner-image3:hover {
+  transform: scale(1.3);
+  transition: 1s;
+  -webkit-filter: blur(0px);
+}
+
+.banner h2 {
+  position: relative;
+  top: -70%;
+  left: 40%;
+  font-size: 30px;
+  text-transform: uppercase;
+  color: ghostwhite;
+}
+
+
+.main-content {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.main-content ul li {
+  margin: 15px 0;
+}
+
+/* iframe youtube video CSS article from smashing magazine https://www.smashingmagazine.com/2014/02/making-embedded-content-work-in-responsive-design/ */
+
+.intrinsic-container {
+  position: relative;
+  /* this is to maintain the aspect ratio */
+  padding-bottom: 56.25%;
+  padding-top: 35px;
+  height: 0;
+  overflow: hidden;
+  border: 5px solid black;
+  background: black;
+}
+.intrinsic-container:hover {
+  border: 5px solid #F8DA59;
+  transition: 0.3s;
+}
+
+.intrinsic-container iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* Google maps style */
+
+#map {
+  width: 100%;
+  height: 400px;
+}
+
+
+
+
+footer {
+  width: 100%;
+  margin: 0 auto;
+  margin-top: 50px;
+  padding: 50px 0px;
+  background: #F8DA59;
+}
+
+footer p {
+  margin-left: 15%;
+}
+
+footer a {
+  text-decoration: none;
+}
