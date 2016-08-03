@@ -1,0 +1,237 @@
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+body, html {
+  font-family: arial;
+  margin: 0;
+  background-image: url("images/bg_body.jpg");
+  font-weight: 100;
+}
+
+header {
+  background: black;
+  color: white;
+}
+
+nav ul li a {
+  text-decoration: none;
+  color: white;
+  padding-top: 15px;
+}
+
+nav ul li a:hover {
+  color: #66a3ff;
+  border-top: 3px solid #3385ff;
+}
+
+ul {
+  padding-right: 10px;
+  padding-left: 0;
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+nav {
+  width: 960px;
+  display: block;
+  margin: 0 auto;
+}
+
+nav ul li {
+  list-style: none;
+  display: inline;
+  padding: 10px;
+}
+
+header {
+  line-height: 80px;
+  margin-top: 0;
+}
+
+.main-content {
+  width: 960px;
+  display: block;
+  margin: 0 auto;
+}
+
+.banner {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+#logo {
+  float:left;
+}
+
+#social-media {
+  float:right;
+}
+
+#social-media img {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%); /* Chrome, Safari, Opera */
+  width: 50px;
+  margin-left: 15px;
+  border-radius: 10px;
+  box-shadow: 0px 7px 5px 0px rgba(209,209,209,1);
+}
+
+#social-media img:hover {
+  filter: none;
+  -webkit-filter: none;
+}
+
+.photobanner img.shadow {
+  margin-top: -5px;
+}
+
+.blurb {
+  width: 100%;
+  border-left: 2px solid #d3d3d3;
+  border-top: 2px solid #d3d3d3;
+  border-bottom: 2px solid white;
+  border-right: 2px solid white;
+  padding: 10px;
+}
+
+.blurb-text {
+  width: 70%;
+  float: left;
+}
+
+.blurb-button {
+  width: 30%;
+  float: right;
+}
+
+.blurb-button img {
+  display: block;
+  margin: 0 auto;
+  padding: 10px;
+}
+
+.home-boxes {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.home-boxes a {
+  color: #3385ff;
+  text-decoration: none;
+}
+
+.home-boxes a:hover {
+  color: chartreuse;
+  text-decoration: none;
+}
+
+
+.homebox {
+  width: 33%;
+  float: left;
+}
+
+.homebox img {
+  width: 295px;
+  border: 5px solid #d3d3d3;
+  padding: 2px;
+}
+
+.homebox img:hover {
+  border: 5px solid chartreuse;
+}
+
+
+
+footer {
+  background: black;
+  color: #666666;
+  min-height: 100px;
+  margin-top: 15px;
+}
+
+footer h3 {
+  color: #cccccc;
+}
+
+.box-footer {
+  width: 960px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.blogroll {
+  width: 25%;
+  float: left;
+  padding: 5px;
+}
+
+.textwidget {
+  width: 50%;
+  float: left;
+  padding: 5px 30px;
+}
+
+.textwidget p {
+  border-top: solid 0.5px #d3d3d3;
+  font-size: 15px;
+  padding-top: 5px;
+}
+
+.metawidget {
+  width: 25%;
+  float: right;
+  padding: 5px;
+}
+
+.box-footer ul li {
+  list-style: none;
+  padding: 5px 0px 5px 0px;
+  border-top: solid 0.5px #d3d3d3;
+}
+
+.box-footer ul li a {
+  text-decoration: none;
+}
+
+.box-footer ul li a:visited {
+  text-decoration: none;
+  color: #666666;
+}
+
+.box-footer ul li a:hover{
+  color: chartreuse;
+}
+
+.credits {
+  width: 960px;
+  display: block;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.credits p {
+  font-size: 12px;
+}
+
+.copyright {
+  float: left;
+  width: 25%;
+}
+
+.companybottom {
+  float: right;
+  width: 25%;
+}
+
+.companybottom span {
+  color: #3385ff;
+}
