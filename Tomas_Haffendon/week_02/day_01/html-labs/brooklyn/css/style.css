@@ -37,9 +37,6 @@ body {
 .boxes {
 	align-items: center;
 }
-header {
-	margin-left: 120px;
-}
 
 footer{
 	margin-left: 120px;
@@ -49,7 +46,11 @@ footer{
 #boxes {
 	max-width: 1000px;
 	margin: auto;
-	padding-left: 20px;
+}
+
+.tile {
+	border: 5px solid grey;
+	padding: 2px;
 }
 
 #date {
