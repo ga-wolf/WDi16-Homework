@@ -30,30 +30,34 @@ for (var i = 0; i<books.length; i++) {
 
 
 
-for (var i = 0; i<books.length; i++) {
-	var currentBook = books[i];
-
-
-	var newPara = document.createElement("li");
-	var paraText = document.createTextNode(books[i].title + " by " + books[i].author);
-	newPara.appendChild(paraText);
-
-  var body = document.getElementsByTagName("body");
-  document.body.appendChild(newPara);
-}
-
 
 for (var i = 0; i<books.length; i++) {
 	var currentBook = books[i];
 
+  var newUl = document.createElement("ul");
+  document.body.appendChild(newUl);
 
-	var newPara = document.createElement("ul");
-	var paraText = document.createTextNode(books[i].title + " by " + books[i].author);
-	newPara.appendChild(paraText);
+	var newLi = document.createElement("li");
+  document.body.appendChild(newLi);
 
-  var body = document.getElementsByTagName("body");
-  document.body.appendChild(newPara);
+	var liText = document.createTextNode(books[i].title);
+
+  var newLi1 = document.createElement("li");
+  document.body.appendChild(newLi1);
+
+  var liText1 = document.createTextNode(books[i].author);
+
+  var newLi2 = document.createElement("li");
+  document.body.appendChild(newLi2);
+
+  var liText2 = document.createTextNode(books[i].alreadyRead);
+
+  newLi.appendChild(liText);
+	newLi1.appendChild(liText1);
+	newLi2.appendChild(liText2);
+
 }
+
 // Bonus: add a property to each book with the URL of the book cover, and add an img element for each book on the page.
 
 
