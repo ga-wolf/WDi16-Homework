@@ -1,0 +1,111 @@
+body{
+  margin:0;
+  background:gainsboro;
+}
+.logo{
+  background-image: url('images/brook-and-lyn-logo.gif');
+	background-repeat: no-repeat;
+  height: 50px;
+  /*margin-top: 10px;*/
+  width:200px;
+  /*margin-top: 20px;*/
+}
+
+.container{
+  background: white;
+  /*width:auto;*/
+padding: 30px 50px;
+  margin: 0 20px;
+}
+
+.image1{
+  background-image: url('images/home-bloghero.png');
+  background-repeat: no-repeat;
+  height: 500px;
+max-width: 100%;
+
+  }
+  .image2{
+    background-image: url('images/home-rings.png');
+    background-repeat: no-repeat;
+    margin-top:5px;
+    height: 500px;
+  max-width: 100%;
+  }
+  p1{
+    color:blue;
+margin-bottom: -10px;
+  }
+.text{
+  width:950px;
+}
+p2{
+  line-height: 400%;
+}
+p3{
+  line-height: 150%;
+}
+footer{
+
+  margin-top: 10px;
+  color:gainsboro;
+}
+.columns1{
+background-image: url('images/press-nbcnewyork.gif');
+
+border:5px solid lightgray;
+background-repeat: no-repeat;
+width:220px;
+height:140px;
+float:left;
+padding-left: 5px;
+/*background-size: cover;*/
+/*margin-left:10px;*/
+}
+.columns2{
+background-image: url('images/press-huffpost.gif');
+background-repeat: no-repeat;
+border:5px solid lightgray;
+
+width:220px;
+height:140px;
+float:left;
+padding-left: 5px;
+/*background-size: cover;*/
+margin-left:10px;
+}
+.columns3{
+background-image: url('images/press-logo_lucky.gif');
+background-repeat: no-repeat;
+border:5px solid lightgray;
+
+width:215px;
+height:140px;
+float:left;
+padding-left: 10px;
+/*background-size: cover;*/
+margin-left:5px;
+}
+.columns4{
+background-image: url('images/press-marieclaire.gif');
+background-repeat: no-repeat;
+border:5px solid lightgray;
+
+width:215px;
+height:140px;
+float:left;
+padding-left: 10px;
+/*background-size: cover;*/
+margin-left:5px;
+}
+h1{
+
+  clear:both;
+  font-size: 10px;
+}
+.class{
+  color: blue;
+}
+span{
+  color:blue;
+}
