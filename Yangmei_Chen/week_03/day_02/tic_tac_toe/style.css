@@ -1,0 +1,29 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body{
+  background-image: url('images/matrix.gif');
+  background-repeat: repeat;
+}
+
+header h1{
+  color: ghostwhite;
+  text-align: center;
+  margin: 2em;
+}
+
+.squares {
+  width: 32%;
+  background-color: #005000;
+  border: 1px solid black;
+  display: inline-block;
+  font-size: .5px;
+}
+
+main{
+  width: 40%;
+  display: block;
+  margin: 80px auto;
+}
