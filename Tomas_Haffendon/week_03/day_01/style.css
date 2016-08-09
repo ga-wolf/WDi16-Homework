@@ -1,0 +1,57 @@
+.scores {
+	text-align: center;
+}
+
+.title, h1 {
+	box-sizing: border-box;
+	height: 50px;
+	text-align: center;
+	margin: auto;
+}
+.win, .draw, .lose {
+	box-sizing: border-box;
+	width: 60px;
+	height: 20px;
+	display: inline-block;
+	margin: auto;
+	/*text-align: center;*/
+	border: 1px solid black;
+}
+
+.board{
+	box-sizing: border-box;
+	height: 350px;
+	width: 350px;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	border: 2px solid black;
+}
+.row {
+		box-sizing: border-box;
+}
+
+.cell {
+	box-sizing: border-box;
+	position: relative;
+	border: 1px solid black;
+	width: 100px;
+	height: 100px;
+	margin-left: 10px;
+	margin-top: 10px;
+	display: inline-block;
+	overflow:hidden;
+}
+.badger {
+	background-image: url("Badger.png");
+	background-size: cover;
+	/*width: 100%;*/
+}
+.wolf {
+	background-image: url("Wolf.png");
+	background-size: cover;
+	/*width: 100%;*/
+}
