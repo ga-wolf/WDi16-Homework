@@ -156,7 +156,7 @@ var Mario = function() {
         },350);
       }
 
-      if (Math.floor(Math.random()*100)%10===0) {
+      if (Math.floor(Math.random()*100)%5===0) {
         setTimeout(function() {
           audioPower.play();
           var newWidth = oldWidth+250;
