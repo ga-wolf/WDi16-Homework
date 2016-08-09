@@ -1,0 +1,72 @@
+#A, #B, #C, #colContainer {
+  display: block;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.A, .B, .C, .col, .A0, .A1, .A2, .B0, .B1, .B2, .C0, .C1, .C2 {
+  background-color: gainsboro;
+  display: inline-block;
+  width: 20%;
+  text-align: center;
+  height: 50px;
+  border: 1px solid ghostwhite;
+  padding-top: 10px;
+}
+
+.A, .B, .C, .col {
+  text-align: right;
+  background-color: white;
+  border: none;
+  font-weight: bold;
+  background-color: transparent;
+}
+
+.col {
+  height: 20px;
+  text-align: center;
+}
+
+.rowLine {
+  width: 55%;
+  margin: 0% 0% 0% 25%;
+  height: 3px;
+  background-color: hotpink ;
+  position: relative;
+  top: 70px;
+  visibility: hidden;
+}
+
+.colLine {
+  width: 3px;
+  height: 170px;
+  background-color: hotpink;
+  position: absolute;
+  top: 215px;
+  left: 51%; /*center*/
+  visibility: hidden;
+}
+
+.diagLine {
+  width: 3px;
+  height: 214px;
+  background-color: hotpink;
+  position: absolute;
+  left: 50%;
+  top: 194px;
+  transform: rotate(-45deg);
+  visibility: hidden;
+}
+
+.replay {
+  height: 80px;
+  width: 25%;
+  display: block;
+  margin: 0 auto;
+  margin-top: 50px;
+  border-radius: 10px;
+  background-color: #d3d3d3;
+  text-transform: uppercase;
+  cursor: pointer;
+  outline: none;
+}
