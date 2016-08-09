@@ -37,9 +37,37 @@ button[id*="Row"]
   border-radius: 10%;
   font-family: "Dosis";
   /*border: 0;*/
+  overflow: hidden;
+  vertical-align: top;
 }
+
+
+
+
+
 /* use wildcard selector above - ie $row perhaps */
+
+/*not working*/
 /*#topRow2, #secondRow5, #thirdRow8 {
   border-right: 5px;
   border-right-color: black;
 }*/
+select, #reset {
+  margin-right: 100px;
+  float: right;
+  background-color: lightslategray;
+  font-family: "Dosis";
+  display: block;
+}
+
+#imageTest {
+  height: 200px;
+  width: 200px;
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  font-size: 65px;
+  background-color: lightblue;
+  border-radius: 10%;
+  font-family: "Dosis";
+}

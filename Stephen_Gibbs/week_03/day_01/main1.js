@@ -1,3 +1,5 @@
+//ARCHIVE CODE TUESDAY 9 AUG 9:37AM
+
 console.log("testing once again");
 
 // create array of nine positions
@@ -28,52 +30,17 @@ var board = {
   p7: null,
   p8: null,
   p9: null
-
 };
-
-var tokenOne = "X";
-var tokenTwo = "O";
-var tokenThree = '<img src="clinton.jpg" style="height:170px;width:170px;">';
-var tokenFour = '<img src="trump3.png" style="height:170px;width:170px;">';
-var tokenFive;
-var tokenSix;
-
 
 var count = 0;
 var whoseTurn;
-// var startToken = tokenThree;
-var startToken = tokenOne;
-var endToken = tokenTwo;
-var choice = 1;
-console.log("CHOICE INITIAL");
-
-document.querySelector("select").addEventListener("change",function() {
-  choice = parseInt( this.value );
-
-  console.log(choice);
-  if (choice === 1) {
-    startToken = tokenOne;
-    endToken = tokenTwo;
-  }
-  else if (choice === 2){
-    startToken = tokenThree;
-    endToken = tokenFour;
-  }
-  else if (choice ===3) {
-    startToken = tokenFive;
-    endToken = tokenSix;
-  }
-});
-
-console.log("CHOICE AFTER EVENT");
-
-
+var startToken = "X";
 var turnCheck = function () {
 count++;
 console.log("times pressed equals " + count);
 if (count%2===0) {
- whoseTurn = endToken;
-} else whoseTurn = startToken;
+ whoseTurn = "O";
+} else whoseTurn = "X";
 };
 
 document.getElementById("reset").onclick = function() {
@@ -174,17 +141,17 @@ gameCheck();
 };
 
 
-//
-// document.getElementById("imageTest").onclick = function() {
-// // turnCheck();
-// // board.p9 = whoseTurn;
-// document.getElementById("imageTest").src = '"trump3.png" style= "height:170px;width:170px;"';
-// // imageTest.innerHTML= '<img src="trump3.png" style="height:170px;width:170px;">';
-// imageTest.innerHTML= '<img src="clinton.jpg" style="height:170px;width:170px;">';
-// //console.log("square nine is " + board.p9);
-// // gameCheck();
-// };
-//
+
+document.getElementById("imageTest").onclick = function() {
+// turnCheck();
+// board.p9 = whoseTurn;
+document.getElementById("imageTest").src = '"trump3.png" style= "height:170px;width:170px;"';
+// imageTest.innerHTML= '<img src="trump3.png" style="height:170px;width:170px;">';
+imageTest.innerHTML= '<img src="clinton.jpg" style="height:170px;width:170px;">';
+//console.log("square nine is " + board.p9);
+// gameCheck();
+};
+
 
 
 

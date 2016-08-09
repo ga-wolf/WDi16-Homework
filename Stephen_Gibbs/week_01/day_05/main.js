@@ -83,7 +83,7 @@ if (startLine!==finalLine){
           console.log(startLine[i]);
   }
           console.log("and you change lines at " + finalStation1);
-  };
+  }
 
 // Part 2 is second line from Union square to final station
 
