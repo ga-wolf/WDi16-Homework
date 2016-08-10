@@ -1,4 +1,5 @@
 console.log("Tic tat noooooooo!");
+
 $("document").ready(function(){
 //self populating arrays for players
 var playerOneMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0];
@@ -49,29 +50,47 @@ $(".cell").on("click", function(event) {
 		var positionInArray = $(this).data("position");
 		var value = $(this).data("value");
 		player[positionInArray] = value;
-		checkWinner();
 		//am i duplicating here?
-		if (noOfMoves%2 === 0) {
-			$(this).addClass('badger');
+		console.log("THIS JUST RAN");
+		if (noOfMoves % 2 === 0) {
+			$(this).addClass('badger animated zoomIn');
 		}
-		else if (noOfMoves%2 !== 0) {
-		 	$(this).addClass('wolf');
+		else if (noOfMoves % 2 !== 0) {
+		 	$(this).addClass('wolf animated zoomIn');
 	 	}
+
+		if ( checkWinner() ) {
+			return false;
+		}
 	}
 });
 
-//reset game - done
-var resetGame = function(){
+//reset round - done
+var resetRound = function(){
 	noOfMoves = 1;
 	gameInProgress = true;
-	$(".cell").removeClass('badger wolf');
+	$(".cell").removeClass('badger wolf animated zoomIn');
 	playerOneMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0];
 	playerTwoMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0];
-
+};
+//full reset
+var resetMatch = function(){
+	noOfMoves = 1;
+	roundNumber = 1;
+	playerOneWins = 0;
+	playerTwoMoves = 0;
+	gameInProgress = false;
+	$(".cell").removeClass('badger wolf animated zoomIn');
+	$(".game1").removeClass('badger wolf');
+	$(".game2").removeClass('badger wolf');
+	$(".game3").removeClass('badger wolf');
+	playerOneMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+	playerTwoMoves = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+	gameInProgress = true;
 };
 
 //adds mini image to scoreboard, displays winner message
-var gameOver = function(player) {
+var roundOver = function(player) {
 	gameInProgress = false;
 	if (player === "Player One"){
 		$(".game" + roundNumber).addClass('badger');
@@ -92,32 +111,34 @@ var gameOver = function(player) {
 	roundNumber += 1;
 };
 
-
-
 //badger win message - limit of sweetAlert
 var winnerMessage1 = function (){
 	window.setTimeout(function() {
-		swal({   title: "Winner!!",
+		swal({   title: "Win",
 		text: "Battered by Badger!",
 		imageUrl: "Badger.png",
 		timer: 2000,
-		showConfirmButton: false});
+		showConfirmButton: true,
+		confirmButtonText: "Next round?",
+		closeOnConfirm: true});
 	window.setTimeout(function() {
-		resetGame();
-	} ,5000);
+		resetRound();
+	} ,3000);
 	});
 };
 //wolf win message - limit of sweetAlerts
 var winnerMessage2 = function (){
 	window.setTimeout(function() {
-		swal({   title: "Winner!!",
+		swal({   title: "Win",
 		text: "A win for the Wolf!",
 		imageUrl: "Wolf.png",
 		timer: 2000,
-		showConfirmButton: false});
+		showConfirmButton: true,
+		confirmButtonText: "Next round?",
+		closeOnConfirm: true});
 		window.setTimeout(function() {
-		resetGame();
-		} , 4000);
+		resetRound();
+	} , 3000);
 	});
 };
 //draw message - limit of sweetAlert
@@ -129,45 +150,53 @@ var drawMessage = function (){
 		timer: 2000,
 		showConfirmButton: false});
 		window.setTimeout(function() {
-		resetGame();
-		} , 4000);
+		resetRound();
+	} , 3000);
 	});
 };
-
 //game logic derived from self populating arrays (above)
 var checkWinner = function(){
 	for (var i = 0; i < winningCombo.length; i++) {
 		var currentWinCombo = winningCombo[i];
 		if ( playerOneMoves[currentWinCombo[0]] + playerOneMoves[currentWinCombo[1]] + 	playerOneMoves[currentWinCombo[2]] === 15 ) {
-			gameOver("Player One");
+			roundOver("Player One");
+			return true;
 		}
 		if ( playerTwoMoves[currentWinCombo[0]] + playerTwoMoves[currentWinCombo[1]] + 	playerTwoMoves[currentWinCombo[2]] === 15 ) {
-			gameOver("Player Two");
+			roundOver("Player Two");
+			return true;
 		}
 	}
 	if (noOfMoves === 9) {
-			gameOver();
+			roundOver();
+			return true;
 	}
 };
-
+//end messages
 var endGame = function(){
 	console.log("end game " + playerOneWins);
 	if (playerOneWins === 2) {
-		console.log("BADGER WINS");
-		swal({   title: "BADGER WINS!",
+		swal({   title: "BADGER WINS THE MATCH!",
 		text: "A black and white hero!",
 		imageUrl: "Badger.png",
-		timer: 4000,
-		showConfirmButton: false});
+		showConfirmButton: true,
+		confirmButtonText: "Another Match?",
+		closeOnConfirm: true});
+		window.setTimeout(function() {
+		resetMatch();
+		} , 3000);
 		return true;
 	} else if (playerTwoWins === 2) {
-		swal({   title: "WOLF WINS!",
+		swal({   title: "WOLF WINS THE MATCH!",
 		text: "A lone wolf no longer!",
 		imageUrl: "Wolf.png",
-		timer: 4000,
-		showConfirmButton: false});
+		showConfirmButton: true});
+		window.setTimeout(function() {
+		resetMatch();
+		} , 3000);
 		return true;
 	}
+	// resetMatch();
 };
 
 //END

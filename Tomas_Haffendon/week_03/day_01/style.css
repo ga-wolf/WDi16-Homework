@@ -1,30 +1,36 @@
-/*body {
-	background-image: url("Wolf.png");
-	background-size: cover;
-}*/
-
+body {
+	background-image: url("Tree.png");
+}
 
 .scoreBoard {
 	Width: 190px;
 	height: 60px;
 	margin:  0 auto;
 	text-align: center;
-	border: 1px solid black;
 	padding-top: 10px;
+	background-color: rgba(130, 158, 87, 0.3);
 }
 
 .title {
 	box-sizing: border-box;
-	height: 30px;
+	height: 20px;
+	width: 120px;
 	text-align: center;
 	margin: auto;
+	color: white;
+	font-weight: bold;
+	font-family: monospace;
+	background-color: rgba(130, 158, 87, 0.3);
 }
 
 h1 {
 	box-sizing: border-box;
 	height: 40px;
+	width: 400px;
 	text-align: center;
 	margin: auto;
+	font-size: 40px;
+	font-family: monospace;
 }
 
 .game1, .game2, .game3 {
@@ -33,9 +39,11 @@ h1 {
 	height: 50px;
 	display: inline-block;
 	margin: auto;
+	margin-right: 3px;
+	margin-left: 3px;
+	opacity: 0.8;
 	background-color: white;
-	z-index: 50;
-	/*border: 1px solid black;*/
+	background-color: rgba(210, 205, 220, 0.6);
 }
 
 .board{
@@ -43,8 +51,7 @@ h1 {
 	height: 350px;
 	width: 350px;
 	margin: 30px auto;
-	border: 2px solid black;
-	/*background-color: black;*/
+	background-color: rgba(130, 158, 87, 0.3);
 }
 .row {
 		box-sizing: border-box;
@@ -53,24 +60,27 @@ h1 {
 .cell {
 	box-sizing: border-box;
 	position: relative;
-	border: 1px solid black;
 	width: 100px;
 	height: 100px;
 	margin-left: 10px;
 	margin-top: 10px;
 	display: inline-block;
-	background-color: white;
+	opacity: 1;
+	background-color: rgba(210, 205, 220, 0.6);
 	overflow:hidden;
 }
 .badger {
 	background-image: url("Badger.png");
 	background-size: cover;
+	opacity: 1;
 }
 .wolf {
 	background-image: url("Wolf.png");
 	background-size: cover;
+	opacity: 1;
 }
 .red {
 		background-image: url("Red.png");
 		background-size: cover;
+		opacity: 1;
 }
