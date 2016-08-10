@@ -1,5 +1,6 @@
 console.log("C4 game");
 
+// JavaScript logic
 var Game = {
   newBoard: function(n) {
     // Creates a new board of n x n filled with marker '.'
@@ -29,17 +30,23 @@ var Game = {
     }
   },
   checkRows: function(playerChosen) {
+
     for (var row = 0; row < this.board.length; row++) {
       var count = 0;
+      this.winArray = [];
       for (var col = 0; col < this.board.length; col++) {
         if (this.board[row][col] === playerChosen){
           count++;
+          this.winArray.push(Array(row,col));
         } else {
           count = 0;
+          this.winArray = [];
         }
         if (count === this.countWin) {
           console.log("checkRow true on row: "+row);
           this["finish"] = true;
+          console.log("Start",row);
+          console.log("End",col);
           return true;
         }
       }
@@ -48,11 +55,14 @@ var Game = {
   checkCols: function(playerChosen) {
     for (var col = 0; col < this.board.length; col++) {
       var count = 0;
+      this.winArray = [];
       for (var row = 0; row < this.board.length; row++) {
         if (this.board[row][col] === playerChosen){
           count++;
+          this.winArray.push(Array(row,col));
         } else {
           count = 0;
+          this.winArray = [];
         }
         if (count === this.countWin) {
           console.log("checkCol true on col "+col);
@@ -65,19 +75,20 @@ var Game = {
   checkDiagLR: function(playerChosen) {
     var count = 0;
     var length = this.board.length;
+    this.winArray = [];
     var maxLength = length - this.countWin + 1;
     // Run Bottom Half diagonal Top Left to Bottom Right (incl middle)
     for (var rowStart = 0; rowStart < maxLength; rowStart++) {
       for (var row = rowStart, col = 0; row < length && col < length; row++, col++) {
         if (this.board[row][col] === playerChosen) {
           count++;
+          this.winArray.push(Array(row,col));
         } else {
           count = 0;
+          this.winArray = [];
         }
-        // HM: This is not working
         if (count === this.countWin) {
-          var msg = "checkDiagLR true on StartXY: "+rowStart+","+(col-(this.countWin-1))+" EndXY: "+row+","+col;
-          console.log(msg);
+          console.log("Win diagonal TL to BR");
           this["finish"] = true;
           return true;
         }
@@ -88,12 +99,13 @@ var Game = {
       for (var col = colStart, row = 0; col < length && row < length; col++, row++) {
         if (this.board[row][col] === playerChosen) {
           count++;
+          this.winArray.push(Array(row,col));
         } else {
           count = 0;
+          this.winArray = [];
         }
         if (count === this.countWin) {
-          var msg = "CheckDiagLR true on StartXY: "+(row-(this.countWin-1))+","+colStart+" EndXY: "+row+","+col;
-          console.log(msg);
+          console.log("Win diagonal TL to BR");
           this["finish"] = true;
           return true;
         }
@@ -104,17 +116,19 @@ var Game = {
     var count = 0;
     var length = this.board.length;
     var maxLength = length - this.countWin + 1;
+    this.winArray = [];
     // Run Bottom half diagonal Top Right to Botom Left (incl middle)
     for (var rowStart = 0; rowStart < maxLength; rowStart++) {
       for (var row = rowStart, col = (length-1); row < length && col >= 0; row++, col--) {
         if (this.board[row][col] === playerChosen) {
           count++;
+          this.winArray.push(Array(row,col));
         } else {
           count = 0;
+          this.winArray = [];
         }
         if (count === this.countWin) {
-          var msg = "StartXY: "+(rowStart)+","+(col+this.countWin-1)+" EndXY: "+row+","+col;
-          console.log(msg);
+          console.log("Win diagonal TR to BL");
           this["finish"] = true;
           return true;
         }
@@ -125,12 +139,13 @@ var Game = {
       for (var col = colStart, row = 0; col >= 0 && row <= colStart; col--, row++) {
         if (this.board[row][col] === playerChosen) {
           count++;
+          this.winArray.push(Array(row,col));
         } else {
           count = 0;
+          this.winArray = [];
         }
         if (count === this.countWin) {
-          var msg = "StartXY: "+(colStart-this.countWin+1)+","+colStart+" EndXY: "+row+","+col;
-          console.log(msg);
+          console.log("Win diagonal TR to BL");
           this["finish"] = true;
           return true;
         }
@@ -147,12 +162,21 @@ var Game = {
     return check;
   },
   checkAll: function(playerChosen){
-    this.checkRows(playerChosen);
-    this.checkCols(playerChosen);
-    this.checkDiagLR(playerChosen);
-    this.checkDiagRL(playerChosen);
+    if ( this.checkRows(playerChosen) ) {
+      return true;
+    }
+    if ( this.checkCols(playerChosen) ) {
+      return true;
+    }
+    if ( this.checkDiagLR(playerChosen) ) {
+      return true;
+    }
+    if ( this.checkDiagRL(playerChosen) ) {
+      return true;
+    }
     if (!this.finish && this.isEmpty()) {
       console.log("Draw game no winner");
+      return true;
     }
   }
 };
@@ -161,14 +185,20 @@ var Game = {
 
 // jQuery..................
 $(document).ready(function(){
-  // Cache html select tag values from game_setup page to store for Game.newBoard(n) and Game.winCount(n)
-  var size;
-  var winCount;
-  var maxScore;
 
-  var round = 0; // Round counter
-  var player1Score = 0;
-  var player2Score = 0;
+  // Declare global event listeners used more than once
+  var $select = $('select'); // Select dropdown form game setup
+  var $msg = $('#msg'); // Container to print instructions
+  var $cell; // Assign event after buildBoard creates cell
+  var $buildButton = $('button.build-board');
+  var $document = $(document);
+  var $body = $('body');
+  var $players = $('.players');
+
+  // Declare and cache global Game condition variables
+  var size; // board dimensions size x size
+  var winCount; // length condition to achieve in a row
+  var maxScore; // first player to score maxScore wins
 
   var cacheValues = function() {
     size = parseInt($(".board-size option:selected").val());
@@ -179,91 +209,137 @@ $(document).ready(function(){
     } else {
       winCount = el;
     }
-
     console.log("size: "+size+" winCount: "+winCount+" maxScore: "+maxScore);
   };
-  $('select').change(cacheValues);
+  $select.change(cacheValues);
   cacheValues();
 
-  // Create callback function for building new board
-  var buildBoard = function() {
-    Game.newBoard(size);
-    Game.winCount(winCount);
-    var count = 0;
-    var dimension = (100 / size)+'%';
-    for (var row = 0; row < size; row++) {
-      for (var col = 0; col < size; col++) {
-        count++;
-        var $cell = $("<div class='cell' width = '"+dimension+"%' row="+"'"+row+"' col='"+col+"'>"+count+"</div>");
-        $cell.css({"width": dimension, "height": dimension});
-        $('.container').append($cell);
-      }
-    }
+  // Function to hide set up and show board and title with cached values
+  var showBoard = function() {
     $('.game-setup').css({"display":"none"});
     $('.game-play').css({"display":"block"});
     $('.title').html("C4 game - Line up "+winCount+" in a row; First to score: "+maxScore);
-    $('.cell').on('click',takeMove);
+  };
+
+  // Create function for building a new board
+
+  var buildBoard = function() {
+    // Execute game logic based on cached select values
+    Game.newBoard(size);
+    Game.winCount(winCount);
+
+    var dimension = (100 / size)+'%'; // To set cell width
+    var count = 0; // To number cells
+    var list = ''; // Use string to store appended values
+    // Loop create new board divs and append to div container. Assign row and col attributes for future access
+    for (var row = 0; row < size; row++) {
+      for (var col = 0; col < size; col++) {
+        count++;
+        list += "<div class='cell' row="+"'"+row+"' col='"+col+"'>"+count+"</div>";
+      }
+    }
+    $('.container').html(list);
+    // Cache event listener on board after build
+    $cell = $('.cell');
+    $cell.css({"width": dimension, "height": dimension});
+    $cell.on('click',takeMove);
+    // showBoard callback;
+    showBoard();
     return true;
   };
 
-  $('button.build-board').on('click',buildBoard);
+  $buildButton.on('click',buildBoard);
 
-
-  // Selecting players:
+  // Selecting players
   var player;
 
-  var hardCodePlayer = function(name) {
+  // Function to assign player and update msg div
+  var pickPlayer = function(name) {
     player = name;
-    console.log(player+" selected");
-    $('#msg').html(player+" selected").removeClass().addClass(player);
+    console.log(player+" chosen");
+    $msg.html(player+" chosen").removeClass().addClass(player);
   };
 
   // Shortcut keys: for choosing players
-  $(document).on('keypress', function(event) {
+  $document.on('keypress', function(event) {
     // Number 1 shortcut
     if (event.keyCode === 49) {
-      hardCodePlayer('player1');
+      pickPlayer('player1');
     }
     // Number 2 shortcut
     if (event.keyCode === 50) {
-      hardCodePlayer('player2');
+      pickPlayer('player2');
     }
     // Spacebar shortcut
     if (event.keyCode === 32) {
       if (player === 'player1') {
-        hardCodePlayer('player2')
+        pickPlayer('player2')
       } else if (player === 'player2') {
-        hardCodePlayer('player1')
+        pickPlayer('player1')
       }
     }
   });
 
+  // Cache value of button when player button clicked
   var buttonPlayer = function(){
     var el = $(this).attr('class');
-    hardCodePlayer(el);
+    pickPlayer(el);
+  };
+  $players.on('click','button',buttonPlayer);
+
+
+  var printWin = function() {
+    var winArray = Game.winArray;
+    var length = winArray.length;
+
+    for (var i = 0; i < length; i++) {
+      $(".cell[row="+winArray[i][0]+"][col="+winArray[i][1]+"]").addClass('win');
+    }
   };
 
-  $('.players').on('click','button',buttonPlayer);
+  // Create checkScore and checkFinish callback
+  var player1Score = 0; // Start with zero scores
+  var player2Score = 0;
 
-  // Create checkScore callback
-  var checkScore = function() {
+  // Check round score and record value
+  var checkRound = function() {
+    // Player 1 wins round
     if (Game.finish && Game.lastPlayer === 'player1') {
       player1Score++;
+      $msg.html('Winner is player1 <br/> Reset Board (R)');
+      $body.removeClass().addClass('player1');
       console.log('player1Score:' + player1Score, 'player2Score '+player2Score);
+      $cell.off('click');
+      printWin();
+    // Player 2 wins round
     } else if (Game.finish && Game.lastPlayer === 'player2') {
       player2Score++;
+      $msg.html('Winner is player2 <br/> Reset Board (R)');
+      $body.removeClass().addClass('player2');
       console.log('player1Score:' + player1Score, 'player2Score '+player2Score);
+      $cell.off('click');
+      printWin();
+    // Draw round
+    } else if (Game.isEmpty() && !Game.finish) {
+      $msg.html('Game draw. No points. <br/> Reset board (R)').removeClass().addClass('msg');
+      $cell.off('click');
+      $body.removeClass().addClass('msg');
     }
+    // Append round score
     $('button.player1 span').html(player1Score);
     $('button.player2 span').html(player2Score);
 
+  };
+
+  // Check total round wins
+  var checkGame = function () {
     if (player1Score === maxScore || player2Score === maxScore) {
       if (player1Score > player2Score) {
         swal("player1 WINS!", "Click ok to play again!", "success");
       } else if (player1Score < player2Score) {
         swal("player2 WINS!", "Click ok to play again!", "success");
       }
-      $('.sweet-alert button').on('click',function(){
+      $('.sweet-alert').on('click','button',function(){
         location.reload();
       });
     }
@@ -271,64 +347,43 @@ $(document).ready(function(){
 
   // Create callback function when cell is clicked
   var takeMove = function(){
+
     // Find position of click
     var el = $(this);
     var row = el.attr('row');
     var col = el.attr('col');
     // Check conditions
     if (player === undefined) {
-      $('#msg').html("Please select a player");
+      $msg.html("Please select a player");
     } else if (player === Game.lastPlayer && player !== undefined) {
-      $('#msg').html("Turn taken. Press spacebar to switch players");
+      $msg.html("Turn taken. Press spacebar to switch players");
     } else {
-      // Execute Game logic
       Game.addMark(player,row,col);
       Game.checkAll(player);
-      // Display jQuery styles
       el.addClass(player);
-      if (Game.finish) {
-        $('#msg').html('Winner is '+player);
-        if (player === 'player1') {
-          $('body').css({"backgroundColor": "chartreuse"});
-        } else if (player === 'player2') {
-          $('body').css({"backgroundColor": "yellow"});
-        }
-        $('*').not('button.reset').off('click');
-        $(document).not('button.reset').off('keypress');
-        round++;
-      }
-      if (Game.isEmpty() && !Game.finish) {
-        $('body').css({"background":"#d3d3d3"});
-        $('#msg').html('Game draw. No points. Reset board (R)');
-        $('#msg').removeClass().addClass('msg');
-        $('*').not('button.reset').off('click');
-        $(document).not('button.reset').off('keypress');
-        round++;
-      }
-      checkScore();
+      checkRound();
+      checkGame();
     }
     return true;
   };
 
-
-
-  $('.cell').on('click',takeMove,checkScore);
-
-
   var resetBoard = function() {
-    $('.cell').removeClass('player1');
-    $('.cell').removeClass('player2');
     Game.newBoard(size); // Store the new board in a variable
+    $cell.removeClass('player1');
+    $cell.removeClass('player2');
+    $cell.removeClass('win');
+    $cell.on('click',takeMove);
+
     player = undefined;
-    $('.cell').on('click',takeMove);
-    $('.players').on('click','button',buttonPlayer);
-    $('body').css({"backgroundColor": "white"});
-    $('#msg').html("Board reset. Pick who goes first").removeClass().addClass('.msg');
+    $players.on('click','button',buttonPlayer);
+
+    $body.addClass('reset');
+    $msg.html("Board reset. Pick who goes first").removeClass().addClass('.msg');
   };
 
   $('button.reset').on('click',resetBoard);
 
-  $(document).on('keypress', function(event) {
+  $document.on('keypress', function(event) {
     if (event.keyCode === 114) {
       resetBoard();
     }

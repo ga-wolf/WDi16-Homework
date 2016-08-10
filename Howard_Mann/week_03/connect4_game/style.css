@@ -32,7 +32,7 @@ body {
 
 button {
   font-size: 20px;
-  padding: 10px;
+  /*padding: 10px;*/
   width: 20%;
   text-align: center;
   outline: none;
@@ -79,6 +79,9 @@ button.reset, button.build-board {
   background-color: yellow;
 }
 
+.reset {
+  background-color: ghostwhite;
+}
 
 .game-setup {
   display: block;
@@ -90,4 +93,8 @@ button.reset, button.build-board {
 
 select {
   display: block;
+}
+
+.win {
+  background-color: hotpink;
 }
