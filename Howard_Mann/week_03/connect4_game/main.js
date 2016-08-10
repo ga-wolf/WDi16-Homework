@@ -181,19 +181,18 @@ var Game = {
   }
 };
 
-
-
-// jQuery..................
+// jQuery..................................................
 $(document).ready(function(){
 
   // Declare global event listeners used more than once
   var $select = $('select'); // Select dropdown form game setup
   var $msg = $('#msg'); // Container to print instructions
   var $cell; // Assign event after buildBoard creates cell
-  var $buildButton = $('button.build-board');
+  var $buildButton = $('button').filter('.build-board');
   var $document = $(document);
   var $body = $('body');
   var $players = $('.players');
+  var $buttonReset = $('button').filter('.reset');
 
   // Declare and cache global Game condition variables
   var size; // board dimensions size x size
@@ -216,9 +215,10 @@ $(document).ready(function(){
 
   // Function to hide set up and show board and title with cached values
   var showBoard = function() {
-    $('.game-setup').css({"display":"none"});
-    $('.game-play').css({"display":"block"});
+    $('.game-setup').hide();
+    $('.game-play').show();
     $('.title').html("C4 game - Line up "+winCount+" in a row; First to score: "+maxScore);
+    $buttonReset.hide();
   };
 
   // Create function for building a new board
@@ -328,7 +328,7 @@ $(document).ready(function(){
     // Append round score
     $('button.player1 span').html(player1Score);
     $('button.player2 span').html(player2Score);
-
+    $buttonReset.show();
   };
 
   // Check total round wins
@@ -379,6 +379,7 @@ $(document).ready(function(){
 
     $body.addClass('reset');
     $msg.html("Board reset. Pick who goes first").removeClass().addClass('.msg');
+    $buttonReset.hide();
   };
 
   $('button.reset').on('click',resetBoard);
