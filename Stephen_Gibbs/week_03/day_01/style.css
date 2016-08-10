@@ -42,8 +42,37 @@ button[id*="Row"]
 }
 
 
+.scoreboard {
+  font: 10px;
+  font-family: "Dosis";
+  line-height: 10px;
+  text-align: right;
+  margin-right: 160px;
+}
 
+.score1, .score2 {
+  display: inline-block;
+  font: 10px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  vertical-align: center;
+}
 
+.score3, .score4 {
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 6px;
+  vertical-align: center;
+}
+
+.score2, .score4 {
+  background-color: white;
+  color: lightslategray;
+  text-align: center;
+  width: 70px;
+  height: 40px;
+  vertical-align: center;
+}
 
 /* use wildcard selector above - ie $row perhaps */
 
@@ -52,12 +81,12 @@ button[id*="Row"]
   border-right: 5px;
   border-right-color: black;
 }*/
-select, #reset {
-  margin-right: 100px;
+select, #reset, #resetScore, #singlePlayer {
+  margin-right: 50px;
   float: right;
   background-color: lightslategray;
   font-family: "Dosis";
-  display: block;
+  display: inline-block;
 }
 
 #imageTest {

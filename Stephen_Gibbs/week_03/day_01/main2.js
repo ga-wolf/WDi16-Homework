@@ -1,4 +1,4 @@
-console.log("testing once again");
+// ARCHIVE WED 10 AUG 11AM
 
 // create array of nine positions
 // input will be buttons
@@ -36,8 +36,8 @@ var secondPlayer = 0;
 
 var tokenOne = "X";
 var tokenTwo = "O";
-var tokenThree = '<img src="clinton.jpg" style="height:175px;width:175px;">';
-var tokenFour = '<img src="trump3.png" style="height:175px;width:175px;">';
+var tokenThree = '<img src="clinton.jpg" style="height:170px;width:170px;">';
+var tokenFour = '<img src="trump3.png" style="height:170px;width:170px;">';
 var tokenFive;
 var tokenSix;
 
@@ -50,7 +50,7 @@ var endToken = tokenTwo;
 var choice = 1;
 console.log("CHOICE INITIAL");
 
-document.querySelector("#tokens").addEventListener("change",function() {
+document.querySelector("select").addEventListener("change",function() {
   choice = parseInt( this.value );
 
   console.log(choice);
@@ -101,15 +101,6 @@ thirdRow9.innerText = "Nine";
 count = 0;
 whoseTurn = null;
 $("p1").remove();
-};
-
-document.getElementById("resetScore").onclick = function() {
-startPlayer = null;
-var b = document.querySelector(".score2");
-b.innerHTML=startPlayer;
-secondPlayer = null;
-var c = document.querySelector(".score4");
-c.innerHTML=secondPlayer;
 };
 
 //ALTERNATIVE RESET OPTIONS FOR COMMENT
@@ -224,12 +215,9 @@ if (board.p1!==null&&board.p1===board.p2&&board.p2===board.p3) {
   if (board.p1===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
-
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 
 } else if (board.p4!==null&&board.p4===board.p5&&board.p5===board.p6) {
@@ -238,11 +226,9 @@ if (board.p1!==null&&board.p1===board.p2&&board.p2===board.p3) {
   if (board.p4===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 } else if (board.p7!==null&&board.p7===board.p8&&board.p8===board.p9) {
   console.log("You have three in a row.  You won!");
@@ -250,11 +236,9 @@ if (board.p1!==null&&board.p1===board.p2&&board.p2===board.p3) {
   if (board.p7===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 }
 
@@ -264,11 +248,9 @@ else if (board.p1!==null&&board.p1===board.p4&&board.p4===board.p7) {
   if (board.p1===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 
 
@@ -278,11 +260,9 @@ else if (board.p1!==null&&board.p1===board.p4&&board.p4===board.p7) {
   if (board.p2===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 }
 else if (board.p3!==null&&board.p3===board.p6&&board.p6===board.p9) {
@@ -291,11 +271,9 @@ else if (board.p3!==null&&board.p3===board.p6&&board.p6===board.p9) {
   if (board.p3===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 }
 else if (board.p1!==null&board.p1===board.p5&&board.p5===board.p9) {
@@ -304,11 +282,9 @@ else if (board.p1!==null&board.p1===board.p5&&board.p5===board.p9) {
   if (board.p1===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 }
 else if (board.p3!==null&board.p3===board.p5&&board.p5===board.p7) {
@@ -317,11 +293,9 @@ else if (board.p3!==null&board.p3===board.p5&&board.p5===board.p7) {
   if (board.p3===startToken) {
     startPlayer++;
     console.log("startplayerscore is " +startPlayer);
-    startPlayerScore();
   } else {
     secondPlayer++;
     console.log("secondplayerscore is" +  secondPlayer);
-    secondPlayerScore();
   }
 } else if (count===9) {
   console.log("Draw");
@@ -358,156 +332,3 @@ var textDrawMessage = document.createTextNode("No glory but a hard earned draw!"
 createDrawMessage.appendChild(textDrawMessage);                                           // Append the text to <p>
 document.body.appendChild(createDrawMessage);
 };
-
-startPlayerScore = function(){
-var b = document.querySelector(".score2");
-b.innerHTML=startPlayer;
-};
-
-secondPlayerScore = function(){
-var c = document.querySelector(".score4");
-c.innerHTML=secondPlayer;
-};
-
-// ARTIFICIAL INTELLIGENCE LOGIC
-
-document.getElementById("singlePlayer").onclick = function() {};
-var computer = function() {
-var boardKeys = Object.keys(board);
-console.log(boardKeys.length);
-var newArray = [];
-for (var i=0; i<boardKeys.length; i++) {
-  if (board[boardKeys[i]] !==startToken) {
-    newArray.push(boardKeys[i]);
-  }
-}
-var randomChoice = newArray[Math.floor(newArray.length * Math.random())];
-board[randomChoice] = endToken;
-if (randomChoice==="p1") {
-  topRow1.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p2") {
-  topRow2.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p3") {
-  topRow3.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p4") {
-  secondRow4.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p5") {
-  secondRow5.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p6") {
-  secondRow6.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p7") {
-  thirdRow7.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p8") {
-  thirdRow8.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-if (randomChoice==="p9") {
-  thirdRow9.innerHTML = endToken;
-  turnCheck();
-  gameCheck();
-}
-};
-
-
-
-
-//secondRow4.innerHTML =endToken;
-
-
-
-// for (var i in board) {console.log(board[i]);}
-
-
-// // return keys into an array as cannot count length of object
-// //then count length of array
-// // then iterate over the array to return the property
-// // count x or 0 then to determine which is greater and whose turn
-//
-// var countX=0;
-// var countO=0;
-// console.log(Object.keys(board));
-// var test = Object.keys(board);
-// console.log(test.length);
-//
-// //iterate for loop to return properties in Object
-//
-// for (var i in board) {
-// console.log(board[i]);
-// if (board[i]==="X") {
-//   countX++;
-//   console.log(countX);
-// } else if (board[i]==="O") {
-//   countO++;
-//   console.log(countO);
-// }}
-// if (countX>countO) {
-//   whoseTurn = "donkey";
-// }
-//
-
-// CODE OUT FOR NOW
-//create function to run within button
-// if button clicked commence function
-// for first button click, whoseTurn is "X"
-
-
-// var counter =1;
-// var whoseTurn;
-// var turnCheck = function() {
-//   if (counter%2===0) {whoseTurn = "doggie";
-// }
-//  else {whoseTurn="cattie";}
-//  };
-
-
-
-
-// needs to run as continuous loop
-
-//
-
-// start with counter = zero, on click of button then it populates p1 to p9 depending on which
-// problem with counter - base it on p1 to p9
-// var counter;
-// for (i=0; i<=9; i++) {
-//   if (i%2===0) {
-//     counter = "X";
-//   } else {
-//     counter = "nought";
-//   console.log(counter);}
-// }
-
-//
-// if (moves.includes($(this.attr("id")) {
-// // don't let them move there
-// } else if ($(this).attr("id") === lastMove) {
-//   //counter -= 1;
-//   // remove the tile from the board;
-// } else {
-//  counter += 1
-//  moves.push(lastMove)
-//  lastMove = $(this).attr("id");
-//  // place the tile on the board
-// }

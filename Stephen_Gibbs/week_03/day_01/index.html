@@ -10,17 +10,34 @@
 
 </head>
 <body>
+<div class = "f3">
+  <button id="reset">Reset Game</button>
+  <button id="resetScore">Reset Score</button>
+</div>  <br>
+<select id="singlePlayer">
+<option value="1">Choose Players</option>
+<option value="2">single</option>
+<option value="3">expert</option>
+</select>
+  <select id="tokens">
+    <option value="1">Classic</option>
+    <option value="2">Presidential</option>
+    <option value="3">Other</option>
+  </select>
 
 <h1>Tic Tac Toe</h1>
 <h2>by Stephen Gibbs</h2>
-<button id="reset">Reset Game</button>
-<br>
-<select>
-  <option value="1">Classic</option>
-  <option value="2">Presidential</option>
-  <option value="3">Other</option>
-</select>
-<br>
+
+<div class="scoreboard">
+  <div class="f1">
+  <p class ="score1">Start Player</p>
+  <p class ="score2"></p>
+  </div>
+  <div class="f2">
+  <p class ="score3">Second Player</p>
+  <p class="score4"></p>
+  </div>
+</div>
 <div class="container">
 <div class = "a">
   <button id = "topRow1">One</button>
