@@ -53,6 +53,11 @@ button.reset, button.build-board {
   cursor: pointer;
 }
 
+button.reset {
+  position: fixed;
+  top: 100px;
+}
+
 .msg-container {
   text-align: center;
   font-style: italic;

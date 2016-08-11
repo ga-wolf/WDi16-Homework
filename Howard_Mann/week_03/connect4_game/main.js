@@ -118,6 +118,7 @@ var Game = {
     var maxLength = length - this.countWin + 1;
     this.winArray = [];
     // Run Bottom half diagonal Top Right to Botom Left (incl middle)
+
     for (var rowStart = 0; rowStart < maxLength; rowStart++) {
       for (var row = rowStart, col = (length-1); row < length && col >= 0; row++, col--) {
         if (this.board[row][col] === playerChosen) {
@@ -135,8 +136,8 @@ var Game = {
       }
     }
     // Run Top half diagonal Top Right to Botom Left (excl middle)
-    for (var colStart = (length-2); colStart > maxLength; colStart-- ) {
-      for (var col = colStart, row = 0; col >= 0 && row <= colStart; col--, row++) {
+    for (var colStart = (length-2); colStart > (this.countWin - 2); colStart-- ) {
+      for (var col = colStart, row = 0; col >= 0 && row <= (length-2); (col-- && row++)) {
         if (this.board[row][col] === playerChosen) {
           count++;
           this.winArray.push(Array(row,col));
@@ -306,29 +307,32 @@ $(document).ready(function(){
     // Player 1 wins round
     if (Game.finish && Game.lastPlayer === 'player1') {
       player1Score++;
-      $msg.html('Winner is player1 <br/> Reset Board (R)');
+      $msg.html('Winner is player1 <br/> Reset Board');
       $body.removeClass().addClass('player1');
       console.log('player1Score:' + player1Score, 'player2Score '+player2Score);
       $cell.off('click');
       printWin();
+      $buttonReset.show();
     // Player 2 wins round
     } else if (Game.finish && Game.lastPlayer === 'player2') {
       player2Score++;
-      $msg.html('Winner is player2 <br/> Reset Board (R)');
+      $msg.html('Winner is player2 <br/> Reset Board');
       $body.removeClass().addClass('player2');
       console.log('player1Score:' + player1Score, 'player2Score '+player2Score);
       $cell.off('click');
       printWin();
+      $buttonReset.show();
     // Draw round
     } else if (Game.isEmpty() && !Game.finish) {
-      $msg.html('Game draw. No points. <br/> Reset board (R)').removeClass().addClass('msg');
+      $msg.html('Game draw. No points. <br/> Reset Board').removeClass().addClass('msg');
       $cell.off('click');
       $body.removeClass().addClass('msg');
+      $buttonReset.show();
     }
     // Append round score
     $('button.player1 span').html(player1Score);
     $('button.player2 span').html(player2Score);
-    $buttonReset.show();
+
   };
 
   // Check total round wins
@@ -383,11 +387,11 @@ $(document).ready(function(){
   };
 
   $('button.reset').on('click',resetBoard);
-
-  $document.on('keypress', function(event) {
-    if (event.keyCode === 114) {
-      resetBoard();
-    }
-  });
+  //
+  // $document.on('keypress', function(event) {
+  //   if (event.keyCode === 114) {
+  //     resetBoard();
+  //   }
+  // });
 
 }); // jQuery document ready function
