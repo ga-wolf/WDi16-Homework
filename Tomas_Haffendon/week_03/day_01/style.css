@@ -7,7 +7,7 @@ body {
 	height: 60px;
 	margin:  0 auto;
 	text-align: center;
-	padding-top: 10px;
+	padding-top: 20px;
 	background-color: rgba(130, 158, 87, 0.3);
 }
 
@@ -16,6 +16,7 @@ body {
 	height: 20px;
 	width: 120px;
 	text-align: center;
+	padding-top: 10px;
 	margin: auto;
 	color: white;
 	font-weight: bold;
