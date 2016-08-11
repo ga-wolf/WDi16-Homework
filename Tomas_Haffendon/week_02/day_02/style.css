@@ -1,0 +1,47 @@
+* {
+}
+body {
+    margin: 0;
+    background-image: url("./images/background.png");
+    max-width: 99%;
+    max-height: 99%;
+    font-family: 'Exo', sans-serif;
+}
+nav {
+    position: relative;
+    top: 30px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 60px;
+    color: Red;
+    text-shadow: none;
+    border-bottom: none;
+}
+
+.title {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    color: ghostwhite;
+}
+h1 {
+    margin:0;
+}
+p {
+    margin-bottom: 0;
+
+}
+h4 {
+    margin: 0;
+    position: relative;
+    right: -450px;
+}
