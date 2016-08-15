@@ -22,7 +22,7 @@ require 'rainbow'
 puts Rainbow("Bonus calculators".center(80,'.')).bg(:chartreuse).black
 
 def menu
-  puts "\nMenu Bar:"
+  puts Rainbow("\nMenu Bar:").bg(:yellow).black
   puts Rainbow("\n#{'Mortgage Calculator'.ljust(30,'.')} (a)").rebeccapurple
   puts Rainbow("#{'BMI Calculator'.ljust(30,'.')} (b) ").peru
   puts Rainbow("#{'Trip Calculator'.ljust(30,'.')} (c)").hotpink
@@ -65,17 +65,17 @@ def bmi
   print Rainbow("Enter your height (cm): ").yellow.underline
   height = gets.chomp.to_f
   result = weight / ((height/100)**2)
-  puts Rainbow("Your BMI index is: #{result.round(2)}").bg(:yellow)
+  puts Rainbow("Your BMI index is: #{result.round(2)}").bg(:yellow).black
 end
 
 def trip
-  print "Enter distance (km): "
+  print Rainbow("Enter distance (km): ").hotpink.underline
   distance = gets.chomp.to_f
-  print "Enter km per litre for vehicle (km): "
+  print Rainbow("Enter km per litre for vehicle (km): ").hotpink.underline
   km_litre = gets.chomp.to_f
-  print "Enter petrol price per litre ($): "
+  print Rainbow("Enter petrol price per litre ($): ").hotpink.underline
   price_litre = gets.chomp.to_f
-  print "Enter average speed (km/hr): "
+  print Rainbow("Enter average speed (km/hr): ").hotpink.underline
   km_hr = gets.chomp.to_f
   result_cost = ( distance/ km_litre ) * price_litre
   result_time = distance / km_hr
@@ -95,3 +95,4 @@ while user_choice != 'q'
   user_choice = menu()
 end
 puts Rainbow("Bonus calculator exit message".center(80,'*')).bg(:chartreuse).black
+puts 'sl'

@@ -1,6 +1,5 @@
 require 'pry' # For debugger, get's access to custom irb gem 'pry'
 # binding.pry # Similar to debugger; in JS
-# Extra homework: Rainbow gem
 
 # Week_04 Day_01 Homework: Ruby methods and loops
 
