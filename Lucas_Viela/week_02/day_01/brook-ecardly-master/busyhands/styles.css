@@ -1,0 +1,50 @@
+body{
+	background-color: black;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+}
+
+
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+}
+.menu{
+position:relative;
+display:block;
+height:26px;
+font-size:11px;
+font-weight:bold;
+background:transparent url(bgOFF.gif) repeat-x top left;
+font-family:Arial,Verdana,Helvitica,sans-serif;
+border-bottom:3px solid #FF0066;
+}
+.wrapper{
+	background-color: orange;
+	height: 100px;
+	width: 100px;
+}
+.container{
+	background-color: red;
+	height: 100px;
+	width: 100px;
+}
