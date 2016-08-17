@@ -29,7 +29,7 @@ def planTrip (startLine, startStop, endLine, endStop)
   stops_b = []
 
   if startLine == endLine       # No switching lines
-    case spaceship = start_index <=> finish_index # Because spaceships are awesome
+    case start_index <=> finish_index # Because spaceships are awesome
       when -1 then stops_a = start_line[(start_index+1)..finish_index]
       when 1 then stops_a = start_line[finish_index..(start_index-1)].reverse
     end
@@ -37,12 +37,12 @@ def planTrip (startLine, startStop, endLine, endStop)
     puts "\nTo go from #{startStop} to #{endStop} station on line #{start_name} you must travel through the following stops: #{stops_a.join(', ')}. For a total of #{stops_a.length} stops"
 
   elsif startLine != endLine    # Switching lines at Union Square
-    case spaceship = start_index <=> start_union  # Piew piew!
+    case start_index <=> start_union  # Piew piew!
       when -1 then stops_a = start_line[(start_index+1)..start_union]
       when 1 then stops_a = start_line[start_union..(start_index-1)].reverse
     end
 
-    case spaceship = finish_index <=> finish_union
+    case finish_index <=> finish_union
       when -1 then stops_b = finish_line[(finish_index)..(finish_union-1)].reverse
       when 1 then stops_b = finish_line[(finish_union+1)..finish_index]
     end
