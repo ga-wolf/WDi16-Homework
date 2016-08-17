@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WDi16 - Week One - MTA Assignment</title>
+<link rel="stylesheet" type="text/css" href="style.css">
+  <meta charset="utf-8" />
+  <!-- <link href="./style.css"></link> -->
+</head>
+<body>
+
+  <h1>WDi16 - Week One - MTA Assignment</h1>
+  <h1></h1>
+  <h1>New York Three Line Subway System</h1>
+  <p>Please submit your starting line and station then the destination line and station to plot your journey</p>
+  <p></p>
+
+<form>
+  Select the line you will begin your journey with:
+  <!-- <select id = "startLine" onchange= "myFunction()"> -->
+  <select id="chooseLine">
+    <option>start line</option>
+    <option>Line A</option>
+    <option>Line B</option>
+    <option>Line C</option>
+  </select>
+
+  <select id="chooseStartStation">
+    <option>start station</option>
+    <option>example 1</option>
+    <option>example 2</option>
+    <option>example 3</option>
+  </select>
+
+
+  <select id="endLine">
+    <option>end line</option>
+    <option>Line A</option>
+    <option>Line B</option>
+    <option>Line C</option>
+  </select>
+
+  <select id="finalStation">
+    <option>start station</option>
+    <option>example 1</option>
+    <option>example 2</option>
+    <option>example 3</option>
+  </select>
+<!-- <input type = "submit" name = "submit" onsubmit="myFunction()"/> -->
+  <p>Your starting line is: <input type = "text" id = "test" size "20"></p>
+</form>
+
+
+	<script src="./main.js"></script>
+
+<script>
+function myFunction() {
+  var startLine =
+  document.getElementById("chooseLine");
+  document.getElementById("test").value = chooseLine.options[chooseLine.selectedIndex].text;
+}
+</script>
+</body>
+</html>
