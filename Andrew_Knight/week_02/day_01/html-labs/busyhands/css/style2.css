@@ -1,0 +1,153 @@
+body {
+    margin: 0;
+    background-color: gainsboro;
+}
+
+.header {
+    background-color:black;
+    height: 70px;
+    width: 100%;
+    top: 0;
+}
+
+.container {
+    max-width: 1000px;
+    min-height: 200px;
+    margin: 0 auto;
+}
+
+.imageL, .imageR {
+    display:inline-block;
+    width: 48%;
+    margin-top: -25px;
+    margin-bottom: -25px;
+}
+
+.imageR {
+    text-align: right;
+    padding-left: 40px;
+}
+
+.tile {
+    text-align: justify;
+    font-size: 18px;
+	font-family: "Times New Roman", serif;
+    display: inline-block;
+    color: white;
+    text-decoration: none;
+    padding-left: 1px;
+    padding-bottom: 10px;
+    margin-left: 220px;
+    margin-right: -50px;
+}
+
+.photoBanner {
+    width: 100%;
+}
+
+.quote {
+    color: black;
+    border: 1px solid lightgray;
+    padding: 10px;
+    margin: 0px;
+    width: 98%;
+}
+
+.blurb {
+    float: right;
+}
+
+.homeBox {
+    display: inline-block;
+    text-align: left;
+    padding-right: 10px;
+    /*margin: 0 auto;*/
+}
+
+.boxA {
+    /*padding: 10px 30px;*/
+    display: inline-block;
+    width: 33%;
+}
+
+.boxB {
+    /*padding: 10px 30px;*/
+    display: inline-block;
+    width: 33%;
+}
+
+.boxC {
+    /*padding: 10px 30px;*/
+    display: inline-block;
+    width: 33%;
+}
+
+.boxImage {
+    border: 5px solid lightgray;
+}
+
+h3 {
+    font-size: 20px;
+    font-family:serif;
+}
+a {
+    font-size: 16px;
+}
+
+footer {
+    background-color:black;
+    height: 20px;
+    width: 100%;
+}
+
+li {
+    list-style:none;
+}
+
+.footer {
+    background: #000000;
+    color: white;
+    height: 230px;
+    text-align: left;
+
+}
+
+.container {
+    max-width: 1000px ;
+    min-height: 200px;
+    margin: 0 auto;
+
+}
+
+.footer1 {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+
+.footer2 {
+    display: inline-block;
+    width: 40%;
+    vertical-align: top;
+
+}
+
+.footer3 {
+    display: inline-block;
+    width: 25%;
+    vertical-align: top;
+}
+
+.footer1 ul, .footer3 ul {
+    margin-top: 0;
+}
+
+.footer-text {
+    margin-top:20px;
+}
+
+h4 {
+    font-size: 16px;
+    color: white;
+    padding-left: 10px;
+}
