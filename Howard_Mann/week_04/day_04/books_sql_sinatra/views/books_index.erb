@@ -1,0 +1,18 @@
+<h2>Badger's Top <%= @books.length %> reads for 2016: </h2>
+
+<div class="container">
+<% @books.each_with_index do |el, i| %>
+  <div class="book-container">
+    <ul>
+      <li class="title"><%= i+1 %>. <%= el["title"] %></li>
+      <li>Author: <%= el["author"] %></li>
+      <li>Price: A$<%= el["price"] %></li>
+      <% unless el['cover'] == '' %>
+        <a href="/books/<%= el['id'] %>"><img class="cover" src="<%= el['cover'] %>"></a>
+      <% else %>
+        <a href="/books/<%= el['id'] %>"><img class="cover" src="http://fillmurray.com/170/200"></a>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+  </div>

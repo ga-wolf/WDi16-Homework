@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Books CRUD App</title>
+  <link rel="stylesheet" href="/style.css">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+</head>
+<body>
+  <header class="clearfix">
+    <nav>
+      <h1>&hearts; find romance</h1>
+      <ul>
+        <li><a href="/">Advice</a></li>
+        <li><a href="/books">Books</a></li>
+        <li><a href="/books/new">New Book</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="yield clearfix">
+    <%= yield %>
+  </div>
+
+  <script src="/jquery.js"></script>
+  <script src="/main.js"></script>
+</body>
+</html>
