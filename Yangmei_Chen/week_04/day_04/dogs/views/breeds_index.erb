@@ -1,0 +1,11 @@
+<% @all_breeds.each do |breed| %>
+  <ul>
+    <li>
+      <a href="/breeds/<%= breed["id"] %>">ID: <%= breed["id"] %></a>
+    </li>
+    <li>Breed: <%= breed["breed"] %></li>
+    <li><img src="<%= breed["image"] %>"/></li>
+    <li>Type: <%= breed["type"] %></li>
+    <li>Description: <%= breed["description"] %></li>
+  </ul>
+<% end %>

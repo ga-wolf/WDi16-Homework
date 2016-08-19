@@ -1,0 +1,41 @@
+body {
+  background-image: url(/sinatra.png);
+  background-size: cover;
+  text-align: center;
+  font-family: monospace;
+}
+h1 {
+  font-size: 4em;
+}
+h2 {
+  font-size: 2em;
+}
+.yield {
+  width: 45%;
+  height: 550px;
+  float: right;
+  margin: 1em 5em;
+}
+form {
+  font-size: 2em;
+  padding: 2em;
+}
+img {
+  width: 80%;
+  margin: 20px auto;
+}
+.poster {
+  width: 45%;
+  float: left;
+}
+.details {
+  width: 50%;
+  float: right;
+  font-size: 1.5em;
+  text-align: left;
+  padding-right: 20px;
+}
+a{
+  color: black;
+  text-decoration: none;
+}
