@@ -14,7 +14,7 @@
     - books_edit.erb
     - books_new.erb
 
-2. Create table in sql file and write SQL to CREATE TABLE with relevant columns
+2. Create table in books sql file and write SQL to CREATE TABLE with relevant columns
     - Write SQL code in books.sql
     ```
     CREATE TABLE books (
@@ -36,7 +36,7 @@
   - run server in terminal: 'ruby main.rb'
   - write out get routes for each page Create Read Update Delete
     - CREATE
-      - get url '/books/new'        --> erb (:books_new)
+      - get '/books/new' do end     --> erb (:books_new)
       - post url '/books'           --> redirect '/books'
 
     - READ
@@ -58,36 +58,42 @@
     ```
   - This is requiring the 'sqlite3 ruby gem' and linking our database file with a Ruby instance to allow us to write SQL instructions in Ruby
 
-  - Store our SQL code in a string for readability and then use gem method to execute sql string (not worth remembering):
-    ` sql = "code" ` + ` db.execute sql `
+  - Store our SQL code in a string for readability and then use gem method to execute sql string (not worth remembering), and then store it in an instance variable to access in the views pages:
+    ` sql = "code" ` + ` @variable = db.execute sql `
 
-    - get url '/books': SELECT all values from the database
-    <!-- HM note: Returns an array of hashes for us to iterate through -->
-      `SELECT * FROM books;`
+    - CREATE
+      - get url '/books/new': erb(:books_new) to html form page where method post params to books url
 
-    - get url '/books/:id': SELECT the value with the id of the url (note: for simplicity I am not including erb syntax)
-    <!-- HM note: This one is tricky. It returns an array with one hash. After we execute we need to select the hash by accessing it with [0] (i.e. we are actually doing this above by iterating through a block)  -->
-      `SELECT * FROM books WHERE id == params[:id]`
+      - post url '/books': INSERT/ Create and post form values to the books url and then use SQL to store the values with params
+        `INSERT INTO books (title, author, cover, price) VALUES (params[:title],params[:author],params[:cover],params[:price]);`
 
-    - post url '/books': INSERT/ Create and post form values to the books url and then use SQL to store the values with params
-      `INSERT INTO books (title, author, cover, price) VALUES (params[:title],params[:author],params[:cover],params[:price]);`
+    - READ
+      - get url '/books': SELECT all values from the database
+      <!-- HM note: Returns an array of hashes for us to iterate through -->
+        `SELECT * FROM books;`
 
-    <!-- HM: EDIT IS THE TRICKIEST ONE, WE ONLY USE SQL TO SELECT IN ANTICIPATION OF UPDATE LOGIC IS:
-    1) We get the url and :id of the page
-    2) Use SQL to reference the params[:id] to get all the values from the database  
-    3) Redirect to the edit view page
-    4) On the edit views page, we cache the form values with the hash property values
-    5) Remember to change the form action to the books/id url and method to post
-     -->
-    - get url '/books/:id/edit': SELECT values to pre-populate form 'value='' fields
-      `SELECT * FROM books WHERE id == params[:id]`
+      - get url '/books/:id': SELECT the value with the id of the url (note: for simplicity I am not including erb syntax)
+      <!-- HM note: This one is tricky. It returns an array with one hash. After we execute we need to select the hash by accessing it with [0] (i.e. we are actually doing this above by iterating through a block)  -->
+        `SELECT * FROM books WHERE id == params[:id]`
 
-    - post url '/books/:id': UPDATE values of the params[:id] from the url
-    <!-- HM: Remember to update the HTML form input with name='title' etc. -->
-      `UPDATE books SET title='params[:title]', author= 'params[:author]', cover= 'params[:cover]', price= 'params[:price]' WHERE id == params[:id]; `
+    - UPDATE
+      <!-- HM: EDIT IS THE TRICKIEST ONE, WE ONLY USE SQL TO SELECT IN ANTICIPATION OF UPDATE LOGIC IS:
+      1) We get the url and :id of the page
+      2) Use SQL to reference the params[:id] to get all the values from the database  
+      3) Redirect to the edit view page
+      4) On the edit views page, we cache the form values with the hash property values (ie. in input tag add value = "")
+      5) Remember to change the form action to the books/id url and method to post
+       -->
+      - get url '/books/:id/edit': SELECT values to pre-populate form 'value='' fields
+        `SELECT * FROM books WHERE id == params[:id]`
 
-    - get url '/books/:id/delete': DELETE values where id = params[:id]
-      `DELETE FROM books WHERE id == params[:id];`
+      - post url '/books/:id': UPDATE values of the params[:id] from the url
+      <!-- HM: Remember to update the HTML form input with name='title' etc. -->
+        `UPDATE books SET title='params[:title]', author= 'params[:author]', cover= 'params[:cover]', price= 'params[:price]' WHERE id == params[:id]; `
+
+    - DELETE
+      - get url '/books/:id/delete': DELETE values where id = params[:id]
+        `DELETE FROM books WHERE id == params[:id];`
 
 # BEWARE TRAPS!!
   - Order of the get and post route methods
