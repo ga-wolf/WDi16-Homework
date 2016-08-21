@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Cat Walk</title>
+  <script src="style.css"></script>
+
+</head>
+<body>
+
+<!-- Main cat walker   -->
+ <img src= "images/cat-walk.gif" class="cat-walk" id="cat1">
+
+<!-- Samba dancers   -->
+ <!-- <img src= "images/samba1.gif" class="cat-walk" id="samba1">
+ <img src= "images/samba2.gif" class="cat-walk" id="samba2">
+ <img src= "images/samba3.gif" class="cat-walk" id="samba3">
+ <img src= "images/samba4.gif" class="cat-walk" id="samba4">
+ <img src= "images/samba5.gif" class="cat-walk" id="samba5"> -->
+<!--  -->
+
+ <!-- WDI16  -->
+ <!-- <img src= "images/wdi16.gif" class="cat-walk" id="wdi"> -->
+ <!--  -->
+
+ <!--Baby dancers  -->
+ <!-- <img src= "images/bebe.gif" class="baby"> -->
+ <!--
+<!--  -->
+<script src="cat.js"></script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+* {
+}
+body {
+    margin: 0;
+    background-image: url("./images/cow1.png");
+    background-size: cover;
+    max-width: 99%;
+    max-height: 99%;
+    font-family: 'Exo', sans-serif;
+}
+nav {
+    position: relative;
+    top: 30px;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+li {
+    display: inline-block;
+    list-style-type: none;
+    margin: 0 60px;
+    color: Red;
+    text-shadow: none;
+    border-bottom: none;
+}
+
+/*.title {
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    color: ghostwhite;
+}*/
+.fact1 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    up: 90px;
+    left: 130px;
+    color: ghostwhite;
+}
+.fact2 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+.fact3 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+.fact4 {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+}
+
+h3 {
+    font-size: 15px;
+}
+p {
+    margin-bottom: 0;
+    font-size: 10px;
+
+}
+h4 {
+    margin: 0;
+    position: relative;
+    right: -450px;
+}
