@@ -1,0 +1,10 @@
+<h2>Get /waves/:id - This should show one wave with the ID of <%= @wave["id"]%></h2>
+
+<h3><%= @wave["wave"] %></h3>
+<h3><%= @wave["image"] %></h3>
+<img src="<%= @wave['image'] %>">
+
+<h3><%= @wave["description"] %></h3>
+
+<a href="/waves/<%= @wave['id'] %>/edit">Edit this wave</a>
+<a href="/waves/<%= @wave['id'] %>/delete">Delete this wave</a>

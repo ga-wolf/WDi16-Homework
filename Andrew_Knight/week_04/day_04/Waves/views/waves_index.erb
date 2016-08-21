@@ -1,0 +1,12 @@
+<h2>GET /waves - This should show all waves</h2>
+
+<% @all_waves.each do |wave| %>
+  <ul>
+    <li>
+      <a href="/waves/<%= wave["id"] %>">ID of <%= wave["id"] %></a>
+    </li>
+    <li>Waves: <%= wave["wave"] %></li>
+    <li>Image: <%= wave["image"] %></li>
+    <li>Description: <%= wave["description"] %></li>
+  </ul>
+<% end %>

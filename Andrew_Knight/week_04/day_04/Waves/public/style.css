@@ -1,0 +1,26 @@
+body {
+  font-family: monospace;
+}
+
+a {
+  color: rgb(42, 172, 200);
+}
+
+.container {
+  border: 10px solid black;
+  padding: 20px;
+  position: relative;
+  height: 700px;
+}
+
+.container:after {
+  content: "";
+  background: url("http://www.pullmanhotels.com/imagerie/destinations/city/bali-1400x788-1.jpg");
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  opacity: 0.4;
+  z-index: -1;
+}

@@ -1,0 +1,8 @@
+<h2>Please narrow your search</h2>
+
+<ol>
+  <% @choices.each do |el| %>
+    <li><a href="/result/<%= el["Title"] %>"><%= el["Title"] %></a></li>
+    <!-- UL table -->
+  <% end %>
+</ol>
