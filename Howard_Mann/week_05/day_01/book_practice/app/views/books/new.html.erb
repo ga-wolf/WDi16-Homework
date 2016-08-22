@@ -1,0 +1,27 @@
+<h1>Create a new book</h1>
+
+<form action="/books" method="POST">
+  <p>
+    <label>Title:</label><br>
+    <input type="text" name="book[title]">
+  </p>
+  <p>
+    <label>Author:</label><br>
+    <input type="text" name="book[author]">
+  </p>
+  <p>
+    <label>Price:</label><br>
+    <input type="float" name="book[price]">
+  </p>
+  <p>
+    <label>Cover:</label><br>
+    <input type="text" name="book[cover]">
+  </p>
+  <p>
+    <label>Description:</label><br>
+    <input type="text" name="book[description]">
+  </p>
+  <p>
+    <input type="submit" value="New Book">
+  </p>
+</form>

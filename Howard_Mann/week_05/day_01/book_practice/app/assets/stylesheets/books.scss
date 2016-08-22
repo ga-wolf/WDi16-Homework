@@ -1,0 +1,122 @@
+// Place all the styles related to the books controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+* {
+  box-sizing: border-box;
+}
+
+clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+img {
+  width: 150px;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+  position: relative;
+  top: 0;
+  transition: 0.4s;
+}
+
+a:hover {
+  color: hotpink;
+}
+
+nav {
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.index-title {
+  height: 40px;
+  width: 100%;
+  position: relative;
+}
+.index-title a {
+  position: absolute;
+  width: 100%;
+  text-align: center;
+  left: 0;
+  top: 10px;
+}
+
+.index-container {
+  width: 100%;
+  display: block;
+  float: left;
+}
+
+.index-float {
+  float:left;
+  width: 200px;
+  text-align: center;
+  height: 320px;
+  padding: 10px;
+}
+
+.img-container {
+  width: 150px;
+  height: 210px;
+  overflow: hidden;
+  border: 3px solid gainsboro;
+  position: relative;
+  width: 150px;
+  top: 0;
+  left: 0;
+  transition: 0.4s;
+  display: block;
+  margin: 0 auto;
+}
+
+.cover img {
+  width: 145px;
+  position: absolute;
+  left: -73px;
+}
+
+.img-container:hover {
+  border-color: chartreuse;
+  left: 10px;
+}
+
+.show-container {
+  width: 100%;
+  float:left;
+  margin-bottom: 30px;
+}
+
+.show-container img {
+  width: 80%;
+  max-width: 200px;
+  border-bottom: 4px solid gainsboro;
+  border-left: 2px solid gainsboro;
+}
+
+.left-wrapper {
+  width: 30%;
+  float: left;
+  text-align: center;
+}
+
+.right-wrapper {
+  width: 70%;
+  float: right;
+}
+
+.book-table {
+  border: 1px solid gainsboro;
+}
+
+.book-table tr:nth-child(2n+1) {
+  background-color: gainsboro;
+}
+
+.book-table td {
+  padding: 10px;
+}
