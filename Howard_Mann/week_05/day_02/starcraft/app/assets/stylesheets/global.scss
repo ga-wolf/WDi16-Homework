@@ -1,0 +1,53 @@
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.race-float {
+  float: left;
+  width: 300px;
+  text-align: center;
+}
+
+.index-container img {
+  height: 200px;
+  transition: 1s;
+}
+
+.index-container img:hover {
+  background-color: gainsboro;
+}
+
+
+
+table td {
+  vertical-align: top;
+  padding: 10px;
+}
+table {
+  border-collapse: collapse;
+}
+table tr:nth-child(2n+1) {
+  background-color: gainsboro;
+}
+
+.show-left {
+  width: 30%;
+  float: left;
+}
+
+.show-left img {
+  width: 80%;
+  padding: 5%;
+}
+
+.show-right {
+  width: 70%;
+  float: right;
+}
+
+
+.hero-index img {
+  width: 150px;
+}

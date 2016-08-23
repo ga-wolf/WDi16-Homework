@@ -1,0 +1,28 @@
+<h2>Form partial</h2>
+
+<%= form_for(@race) do |f| %>
+  <p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name, required: true, autofocus: true %>
+  </p>
+  <p>
+    <%= f.label :homeworld %><br>
+    <%= f.text_field :homeworld, required: true %>
+  </p>
+  <p>
+    <%= f.label :leader %><br>
+    <%= f.text_field :leader, required: true %>
+  </p>
+  <p>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, cols: 40, rows: 15,  required: true %>
+  </p>
+  <p>
+    <%= f.label :image %><br>
+    <%= f.url_field :image, required: true %>
+  </p>
+  <p>
+    <%= f.submit %>
+  </p>
+
+<% end %>
