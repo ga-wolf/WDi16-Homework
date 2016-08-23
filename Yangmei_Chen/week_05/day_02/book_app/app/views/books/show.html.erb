@@ -1,0 +1,22 @@
+<h1>Book Information</h1>
+
+<h2><%= @book.title %></h2>
+<%= image_tag( @book.image ) %>
+<p>
+  Page Count: <%= @book.page_count %>
+</p>
+<p>
+  Publish Date: <%= @book.publish_date %>
+</p>
+
+<% if @book.author %>
+  <p>
+    Author: <%= link_to(@book.author.name, @book.author) %>
+  </p>
+<% end %>
+
+<div class="controls">
+  <!-- Edit and delete links go here -->
+  <%= link_to "Edit this Book", edit_book_path( @book.id ) %>
+  <%= link_to "Delete this Book", @book, :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</div>
