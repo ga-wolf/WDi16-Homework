@@ -1,0 +1,16 @@
+<h1><%= @author.name %></h1>
+
+<ul>
+  <li>Nationality: <%= @author.nationality %></li>
+  <li>Date of birth: <%= @author.dob %></li>
+  <li>Genre: <%= @author.genre %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit #{@author.name}", "/authors/#{@author.id}/edit" %>
+  <%= link_to "Delete #{@author.name}", "/authors/#{@author.id}", :method => :delete, :data => { :confirm  => "Are you sure?"} %>
+</div>
+
+<hr>
+
+<h3>Books</h3>
