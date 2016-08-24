@@ -1,0 +1,7 @@
+<h1>All Albums</h1>
+
+<% @albums.each do |a| %>
+  <p>
+    <%= link_to( image_tag( a.image ), album_path( a ) ) %>
+  </p>
+<% end %>
