@@ -1,0 +1,35 @@
+<h2>This is in _form.html.erb</h2>
+
+<%= form_for @book do |f| %>
+<p>
+  <%= f.label :title %>
+  <%= f.text_field :title, :required => true %>
+</p>
+
+<p>
+  <%= f.label :year %>
+  <%= f.text_field :year, :required => true %>
+</p>
+
+<p>
+  <%= f.label :medium %>
+  <%= f.text_field :medium, :required => true %>
+</p>
+
+<p>
+  <%= f.label :style %>
+  <%= f.text_field :style, :required => true %>
+</p>
+
+<p>
+  <%= f.label :image %>
+  <%= f.url_field :image, :required => true %>
+</p>
+
+
+<!-- Have a dropdown of all artists -->
+<p><%= f.collection_select(:author_id, Author.all, :id, :name) %></p>
+
+<%= f.submit %>
+
+<% end %>
