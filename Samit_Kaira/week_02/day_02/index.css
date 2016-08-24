@@ -1,0 +1,79 @@
+.landingPage{
+  background-image: url(http://67.media.tumblr.com/36d85bcbd4233b6ba4e0ca96cda7f644/tumblr_o89hejMTiL1u4tvlro1_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+  font-family: monospace;
+  position: relative;
+  top: -80px;
+
+}
+
+img {
+  height: 150px;
+  width: 150px;
+  border-style: ridge;
+  display: block;
+  margin: 20px auto 0px auto;
+
+}
+
+h1 {
+  padding-top: 100px;
+  color: white;
+  font-size: 50px;
+  text-align: center;
+
+}
+
+.fa{
+  display: inline-block;
+  margin: 50px 250px 50px 250px;
+  width: 30%;
+  height: 200px;
+  position: relative;
+  bottom: -400px;
+}
+a {
+  opacity: 0.8;
+  border-style: ridge;
+  font-family: monospace;
+  font-size: 22px;
+  color: white;
+  border: 3px solid white;
+  position: absolute;
+  bottom: 200px;
+  cursor: pointer;
+  display: inline-block;
+  height: 30px;
+  line-height: 30px;
+  text-align: center;
+  text-decoration: none;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 28%;
+}
+
+a:hover {
+
+}
+
+.column {
+  display: inline-block;
+  width: 32.6%;
+  background-color: green;
+}
+
+p {
+  position: fixed;
+  padding: 20px;
+  margin: 50px auto 50px auto;
+  font-size: 14px;
+  bottom: 80px;
+  color: white;
+  width: 100%;
+  display: block;
+  text-align: center;
+  position: absolute;
+  font-family: 'Lato';
+}
