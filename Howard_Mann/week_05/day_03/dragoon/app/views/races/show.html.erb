@@ -1,0 +1,41 @@
+<h2>Show page: <%= @race.name %></h2>
+
+<div class="show-left">
+  <%= image_tag ( @race.image ) %><br>
+  <a href="/races/<%= @race.id %>/edit">Edit Race</a> |
+  <%= link_to( 'Delete Race', race_path(@race), :method => :delete, data: { confirm: "Are you sure?"} ) %>
+
+</div>
+
+<div class="show-right">
+  <table>
+    <tr>
+      <td>Race:</td>
+      <td><%= @race.name %></td>
+    </tr>
+    <tr>
+      <td>Homeworld:</td>
+      <td><%= @race.homeworld %></td>
+    </tr>
+    <tr>
+      <td>Description:</td>
+      <td><%= @race.description %></td>
+    </tr>
+    <tr>
+      <td>Heroes:</td>
+      <td>
+          <% @race.characters.each do |el| %>
+            <%= link_to(el.name, character_path( el.name ) ) %><br>
+          <% end %>
+      </td>
+    </tr>
+    <tr>
+      <td>Units:</td>
+      <td>
+        <% @race.units.each do |el| %>
+          <%= link_to(el.name, unit_path( el.name )) %><br>
+        <% end %>
+      </td>
+    </tr>
+  </table>
+</div>

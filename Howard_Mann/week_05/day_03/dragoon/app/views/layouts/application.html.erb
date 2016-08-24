@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dragoon</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <h1>Starcraft Wiki</h1>
+  <nav>
+    <div class="left-nav">
+      <%= link_to 'Races', races_path %> |
+      <%= link_to 'Units', units_path %> |
+      <%= link_to 'Heroes', characters_path %> |
+      <%= link_to 'Weapons', weapons_path %>
+    </div>
+    <div class="right-nav">
+      <%= link_to 'New Race', new_race_path %> |
+      <%= link_to 'New Units', new_unit_path %> |
+      <%= link_to 'New Hero', new_character_path %>
+    </div>
+  </nav>
+  </header>
+  <hr>
+  <div class="container clearfix">
+    <%= yield %>
+  </div>
+  <hr>
+
+</body>
+</html>

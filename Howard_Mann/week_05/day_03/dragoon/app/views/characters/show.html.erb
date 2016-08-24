@@ -1,0 +1,32 @@
+<h2>Show page: <%= @character.name %></h2>
+
+<div class="show-left">
+  <%= image_tag ( @character.image ) %><br>
+  <a href="/characters/<%= @character.id %>/edit">Edit Character</a> |
+  <%= link_to( 'Delete Character', character_path(@character), :method => :delete, data: { confirm: "Are you sure?"} ) %>
+</div>
+
+<div class="show-right">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><%= @character.name %></td>
+    </tr>
+    <tr>
+      <td>Race:</td>
+      <td>
+        <%= link_to( @character.race.name, race_path(@character.race.name) ) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Weapon:</td>
+      <td>
+        <%= link_to @character.weapon.name, weapon_path(@character.weapon.name) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Background:</td>
+      <td><%= @character.background %></td>
+    </tr>
+  </table>
+</div>
