@@ -1,0 +1,24 @@
+<h2>This should show the new form</h2>
+
+<form action="/mountains" method="POST"> <!-- this is a post request to /mountains -->
+  <p>
+    <label>Name: </label>
+    <input type="text" name="name"> <!-- the input is saved as params["name"] -->
+  </p>
+
+  <p>
+    <label>Height: </label>
+    <input type="text" name="height">
+  </p>
+
+  <p>
+    <label>Image: </label>
+    <input type="text" name="image">
+  </p>
+
+  <p>
+    <label>Country: </label>
+    <input type="text" name="country">
+  </p>
+  <input type="submit" name="Create mountain profile">
+</form>

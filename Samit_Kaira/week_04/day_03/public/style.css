@@ -1,0 +1,16 @@
+.yield {
+  border: 50px solid black;
+  padding: 100px;
+}
+
+body {
+  background: lightblue;
+}
+
+a {
+  color: red;
+}
+
+nav {
+  background: blue;
+}

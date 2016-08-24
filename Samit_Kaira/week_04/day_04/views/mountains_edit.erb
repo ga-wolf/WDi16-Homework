@@ -1,0 +1,26 @@
+<h2>This should show the edit form</h2>
+
+The ID is <%= @mountain["id"] %>
+
+<form action="/mountains/<%= @mountain['id']%>" method="POST">
+  <p>
+    <label>Name: </label>
+    <input type="text" name="name" value="<%= @mountain["name"] %>"> <!--VALUE LETS US USE PREPOPULATED DATA -->
+  </p>
+
+  <p>
+    <label>Height: </label>
+    <input type="text" name="height" value="<%= @mountain["height"] %>">
+  </p>
+
+  <p>
+    <label>Image: </label>
+    <input type="text" name="image" value="<%= @mountain["image"] %>">
+  </p>
+
+  <p>
+    <label>Country: </label>
+    <input type="text" name="country" value="<%= @mountain["country"] %>">
+  </p>
+  <input type="submit" name="Edit mountain profile">
+</form>
