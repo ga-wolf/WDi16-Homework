@@ -1,0 +1,82 @@
+@import url(https://fonts.googleapis.com/css?family=Volkhov:400italic);
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+header img{
+  width: 100%;
+}
+header {
+  /*background-image: url(images/header.jpg);*/
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+}
+header i, header h1 {
+  color: ghostwhite;
+  /*display: inline-block;*/
+  font: 2em 'Volkhov', serif;
+  position: absolute;
+
+}
+header i{
+  /*margin: .5em;*/
+  top: 30px;
+  left: 30px;
+}
+header h1{
+  /*padding: .3em;*/
+  top: 50px;
+  left: 150px;
+}
+/*nav{
+  margin-left: 50px;
+  position: absolute;
+}*/
+header a {
+  font: 1.7em 'Volkhov', serif;
+  text-decoration: none;
+  padding: 1em;
+  font-weight: bolder;
+  color: #040d3b;
+  position: absolute;
+  top: 90px;
+  transition: top .8s;
+}
+nav a#biography{
+  /*top: 100px;*/
+  left: 50px;
+}
+nav a#hometown{
+  /*top: 100px;*/
+  left:250px;
+}
+nav a#trivia{
+  /*top: 100px;*/
+  left:450px;
+}
+header a:hover{
+  color: ghostwhite;
+  top: 100px;
+}
+article{
+  left: 25px;
+  margin: 10px;
+}
+.column {
+  display: inline-block;
+  width: 30%;
+  height: 300px;
+  background-color: #EBEBEB;
+  margin: 1%;
+  border-radius: 15%;
+}
+#column1{
+  padding: 1em;
+}
+#column3 {
+  background-image: url(images/apple.jpg);
+  background-size: cover;
+  background-position: center;
+}
