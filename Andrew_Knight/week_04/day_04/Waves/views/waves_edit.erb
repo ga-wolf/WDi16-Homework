@@ -1,0 +1,20 @@
+<h2>This should show the edit form</h2>
+
+The ID is <%= @wave["id"] %>
+
+<form action="/waves/<%= @wave['id'] %>" method="POST">
+
+  <p>
+    <label for="">Waves: </label>
+    <input type="text" name="waves" value="<%= @wave['waves'] %>">
+  </p>
+  <p>
+    <label for="">Image: </label>
+    <input type="text" name="image" value="<%= @wave['image'] %>">
+  </p>
+  <p>
+    <label for="">Description: </label>
+    <input type="text" name="description" value="<%= @wave['description'] %>">
+  </p>
+  <input type="submit" value="Edit wave">
+</form>

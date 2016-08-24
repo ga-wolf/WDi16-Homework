@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Music</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+    <%= link_to "All Artists", "/artists" %>
+    <%= link_to "Create a new Artist", "/artists/new" %>
+    <%= link_to "All Albums", "/albums" %>
+    <%= link_to "Create a new album", "/albums/new" %>
+  </nav>
+
+<%= yield %>
+
+</body>
+</html>

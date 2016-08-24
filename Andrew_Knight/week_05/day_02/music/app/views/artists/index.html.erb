@@ -1,0 +1,13 @@
+<h1>A log of awesome bands and their albums</h1>
+
+<ul>
+  <% @artists.each do |a| %>
+
+      <%= image_tag ( a.image ) %>
+
+      <p class = "bold">Name: <%= link_to( a.name, "/artists/#{a.id}" ) %></p>
+      <p>Nationality: <%= a.nationality %></p>
+    <br>
+  <% end %>
+
+</ul>

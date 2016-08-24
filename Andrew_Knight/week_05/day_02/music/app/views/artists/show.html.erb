@@ -1,0 +1,21 @@
+<h1><%= @artist.name %></h1>
+
+<%= image_tag @artist.image %>
+
+<ul>
+  <li>Nationality: <%= @artist.nationality %></li>
+
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit #{@artist.name}", "/artists/#{@artist.id}/edit" %>
+  <%= link_to "Delete #{@artist.name}", "/artists/#{@artist.id}", :method => :delete, :data => { :confirm => "Are you sure?"} %>
+</div>
+<hr>
+
+<h3>Albums</h3>
+<ul>
+  <% @artist.albums.each do |a| %>
+  <li><%= link_to( a.name, "/albums/#{a.id}" ) %></li>
+  <% end %>
+</ul>

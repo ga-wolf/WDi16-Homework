@@ -1,0 +1,30 @@
+<h4>This is in _form.html.erb</h4>
+
+<%= form_for @album do |f| %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :released %>
+    <%= f.text_field :released, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :songs %>
+    <%= f.text_field :songs, :required => true %>
+  </p>
+
+  <p>
+    <%= f.label :image %>
+    <%= f.url_field :image, :required => true %>
+  </p>
+
+  <p>
+    <%= f.collection_select(:artist_id, Artist.all, :id, :name) %>
+  </p>
+
+  <%= f.submit %>
+
+<% end %>
