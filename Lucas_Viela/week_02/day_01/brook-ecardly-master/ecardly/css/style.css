@@ -1,0 +1,39 @@
+* {
+     box-sizing: border-box; /* IE */
+}
+ body {
+   background: #CCCECF;
+   font-size: 12
+
+}
+.logo {
+  text-align: center;
+  padding-top: 25px;
+  position: relative;
+}
+.container {
+  width: 730px;
+  min-height: 300px;
+  background: white;
+  margin: 0 auto;
+  padding: 15px 15px 35px 35px;
+
+  }
+.left img{
+  width: 50%;
+  height: auto;
+  padding-left: 15px;
+  padding-right: 10px;
+  float: left;
+
+  }
+.homeboxes{
+  display: inline-block;
+  width: 150px;
+  height: 200px;
+  margin: 1px;
+}
+
+.backtop {
+  position: absolute;
+}
