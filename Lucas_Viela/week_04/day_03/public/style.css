@@ -1,0 +1,13 @@
+body {
+  background: gainsboro;
+
+}
+
+a{
+  color: purple;
+}
+
+.yield{
+  border: 100px solid black;
+  padding: 100px;
+}

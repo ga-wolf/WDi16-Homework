@@ -1,0 +1,11 @@
+<%= @mountain["id"] %></h2>
+
+<h3><%= @mountain["name"] %></h3>
+<h3><%= @mountain["height"] %></h3>
+<h3><%= @mountain["location"] %></h3>
+
+<img src="<%= @mountain['image'] %>">
+
+
+<a href="/animals/<%= @animal['id'] %>/edit">Edit this mountain</a>
+<a href="/animals/<%= @animal['id'] %>/delete">Delete this mountain</a>
