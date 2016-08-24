@@ -1,0 +1,12 @@
+<h2>GET /animals - This should show all animals</h2>
+
+<% @all_mountains.each do |mountain| %>
+  <ul>
+    <li>
+      <a href="/mountains/<%= mountain["id"] %>">ID of <%= mountain["id"] %></a>
+    </li>
+    <li>Height: <%= mountain["height"] %></li>
+    <li>Image: <%= mountain["image"] %></li>
+    <li>Description: <%= mountain["description"] %></li>
+  </ul>
+<% end %>

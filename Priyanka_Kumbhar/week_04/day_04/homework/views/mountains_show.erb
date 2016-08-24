@@ -1,0 +1,11 @@
+<h2>GET /animals/:id - This should show one animal with the ID of <%= @mountain["id"] %></h2>
+
+<h3><%= @mountain["height"] %></h3>
+<h3><%= @mountain["image"] %></h3>
+
+<img src="<%= @mountain['image'] %>">
+
+<h3><%= @mountain["description"] %></h3>
+
+<a href="/mountain/<%= @mountain['id'] %>/edit">Edit this mountain</a>
+<a href="/mountain/<%= @mountain['id'] %>/delete">Delete this mountain</a>
