@@ -3,11 +3,11 @@
 <%= form_tag login_path do %>
   <p>
     <%= label_tag :email %>
-    <%= email_field_tag :email, '', requried: true %>
+    <%= email_field_tag :email, '', required: true %>
   </p>
   <p>
     <%= label_tag :password %>
-    <%= password_field_tag :password, '', requried: true %>
+    <%= password_field_tag :password, '', required: true %>
   </p>
   <p>
     <%= submit_tag 'Login' %>
