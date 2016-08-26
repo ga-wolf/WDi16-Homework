@@ -4,8 +4,7 @@ class RacesController < ApplicationController
   end
 
   def show
-    race_name = params[:id].capitalize
-    @race = Race.find_by(:name => race_name)
+    @race = Race.find_by(:name => params[:id])
   end
 
   def new
@@ -28,7 +27,7 @@ class RacesController < ApplicationController
   def update
     race = Race.find(params[:id])
     race.update( race_params )
-    redirect_to race_path( race )
+    redirect_to race_path( race.name )
   end
 
   def destroy

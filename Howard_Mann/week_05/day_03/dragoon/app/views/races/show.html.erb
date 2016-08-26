@@ -14,8 +14,12 @@
       <td><%= @race.name %></td>
     </tr>
     <tr>
-      <td>Homeworld:</td>
-      <td><%= @race.homeworld %></td>
+      <td>Homeworlds:</td>
+      <td>
+        <% @race.homeworlds.each do |el| %>
+          <%= link_to el.name, homeworld_path(el.name) %><br>
+        <% end %>
+      </td>
     </tr>
     <tr>
       <td>Description:</td>

@@ -1,0 +1,21 @@
+<h1>User show: <%= @user.name %></h1>
+
+<p>Name: <%= @user.name %></p>
+<p>Email: <%= @user.email %></p>
+<p>Projects:</p>
+<ul>
+  <% @user.projects.each do |el| %>
+    <li><%= link_to el.name, project_path(el) %></li>
+  <% end %>
+</ul>
+
+<div class="controls">
+
+  <% if @current_user.present? %>
+    <% if @user == @current_user || @current_user.admin %>
+      <%= link_to 'Edit account', edit_user_path(@user) %> |
+      <%= link_to 'Delete account', user_path(@user), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
+  <% end %>
+
+</div>

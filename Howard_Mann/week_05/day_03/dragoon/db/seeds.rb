@@ -134,6 +134,39 @@ p "Melee characters include: #{melee.characters.all.first.name}"
 p "Range characters include: #{range.characters.all.first.name}"
 p "Plasma characters include: #{plasma.characters.all.first.name}"
 
+
+##################################
+puts "\n#{Rainbow("Homeworld test".ljust(40,'.')).bg(:chartreuse).black}"
+
+Homeworld.destroy_all
+aiur = Homeworld.create({
+  :name => "Aiur",
+  :background => "Homeworld of the Protoss and invaded by Zerg"
+})
+char = Homeworld.create({
+  :name => "Char",
+  :background => "Homeworld of the Zerg"
+})
+korhal = Homeworld.create({
+  :name => "Korhal",
+  :background => "Homeworld of the Terran and invaded by Zerg"
+})
+puts "Homeworld's seeded include #{Homeworld.all.pluck(:name)}"
+
+puts "\n#{"Append Races to Homeworlds".ljust(40,'.')}"
+aiur.races << protoss << zerg
+char.races << zerg
+korhal.races << terran << zerg
+
+puts "Aiur homeworld includes races of #{aiur.races.pluck(:name)}"
+puts "Char homeworld includes races of #{char.races.pluck(:name)}"
+puts "Korhal homeworld includes races of #{korhal.races.pluck(:name)}"
+
+puts "\nZerg homeworlds include: #{zerg.homeworlds.pluck(:name)}"
+puts "Protoss homeworlds include: #{protoss.homeworlds.pluck(:name)}"
+puts "Terran homeworlds include: #{terran.homeworlds.pluck(:name)}"
+
+
 ####################################
 puts "\n #{Rainbow("Has many through relationship".ljust(40,'.')).bg(:yellow).black}"
 
@@ -144,3 +177,6 @@ puts "\n"
 p "Range weapons are used by #{range.races.count} races"
 p "Melee weapons are used by #{melee.races.count} races"
 p "Plasma weapons are used by #{plasma.races.count} races"
+
+####################################
+puts "\n #{Rainbow("Has many and belongs to many".ljust(40,'.')).bg(:hotpink).black}"

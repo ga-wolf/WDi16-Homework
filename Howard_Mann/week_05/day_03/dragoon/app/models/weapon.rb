@@ -11,5 +11,6 @@
 class Weapon < ActiveRecord::Base
   has_many :units
   has_many :characters
-  has_many :races, :through => :units, :through => :characters
+  has_many :races, :through => :units
+  has_many :races, :through => :characters
 end

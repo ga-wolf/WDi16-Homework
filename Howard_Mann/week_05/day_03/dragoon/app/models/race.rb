@@ -16,4 +16,5 @@ class Race < ActiveRecord::Base
   has_many :units
   has_many :weapons, :through => :units
   has_many :characters
+  has_and_belongs_to_many :homeworlds
 end

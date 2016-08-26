@@ -27,7 +27,7 @@ class UnitsController < ApplicationController
   def update
     unit = Unit.find(params[:id])
     unit.update( unit_params )
-    redirect_to unit_path( unit )
+    redirect_to unit_path( unit.name )
   end
 
   private

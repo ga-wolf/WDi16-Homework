@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
+
   root 'races#index'
   resources :races
   resources :characters
   resources :units
   resources :weapons
+  resources :homeworlds
 
 
   # The priority is based upon order of creation: first created -> highest priority.

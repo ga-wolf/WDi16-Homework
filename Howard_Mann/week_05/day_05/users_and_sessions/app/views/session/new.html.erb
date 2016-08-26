@@ -1,0 +1,16 @@
+<h1>Login page</h1>
+
+<%= form_tag login_path do %>
+  <p>
+    <%= label_tag :email %>
+    <%= email_field_tag :email, '', requried: true %>
+  </p>
+  <p>
+    <%= label_tag :password %>
+    <%= password_field_tag :password, '', requried: true %>
+  </p>
+  <p>
+    <%= submit_tag 'Login' %>
+  </p>
+
+<% end %>

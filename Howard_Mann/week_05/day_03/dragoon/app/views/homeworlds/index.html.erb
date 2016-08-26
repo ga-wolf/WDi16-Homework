@@ -1,0 +1,7 @@
+<h1>Homeworlds</h1>
+
+<ul>
+  <% @homeworlds.each do |el| %>
+    <li><%= link_to el.name, homeworld_path(el.name) %></li>
+  <% end %>
+</ul>

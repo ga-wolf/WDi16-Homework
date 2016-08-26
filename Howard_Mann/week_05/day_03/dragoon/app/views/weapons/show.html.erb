@@ -4,7 +4,7 @@
   <tr>
     <td>Races:</td>
     <td>
-      <% @races.each do |el| %>
+      <% @weapon.races.pluck(:name).uniq.each do |el| %>
         <%= link_to(el, race_path(el)) %><br>
       <% end %>
     </td>
