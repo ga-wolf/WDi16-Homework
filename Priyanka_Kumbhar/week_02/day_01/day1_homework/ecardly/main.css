@@ -1,0 +1,68 @@
+body{
+  margin:0;
+  background:gainsboro;
+}
+
+.logo{
+  background-image: url('images/background.jpg');
+	/*background-repeat: no-repeat;*/
+  height: 170px;
+
+  margin:0;
+  /*margin-top: 10px;*/
+  width:100%;
+  /*margin-top: 20px;*/
+  /*border: 5px solid red;*/
+}
+.image1{
+  background-image: url('images/logo.png');
+  background-repeat: no-repeat;
+
+  margin: 20px 550px;
+  height:230px;
+  width:230px;
+  position:absolute;
+  /*border: 5px solid red;*/
+}
+.container{
+  /*padding-top: 2px;*/
+  background-color: white;
+  height:auto;
+  width:900px;
+  margin: 100px auto;
+  position:relative;
+}
+
+h1{
+  position:relative;
+  font-size: 15px;
+  margin: 100px 100px 20px 20px;
+  font-weight: bold;
+}
+.image2{
+  background-image: url('images/ecard-nycstartups.jpg');
+  background-repeat: no-repeat;
+  margin: 20px 20px;
+  height:400px;
+  width:810px;
+  /*border: 5px solid red;*/
+  position:relative;
+  padding-bottom: 20px;
+
+}
+p1{
+  margin-left: 20px;
+position:relative;
+  font-size: 10px;
+  font-weight: weight;
+  max-width: 25%;
+/*position:relative;*/
+float:right;
+line-height: 20px;
+
+}
+span{
+  color:red;
+  font-size: 12px;
+  line-height: 8px;
+}
