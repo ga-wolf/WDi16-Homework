@@ -10,7 +10,8 @@ var allergens = {
 };
 
 var getAllergies = function(number) {
-  var allergenKeys = Object.keys(allergens).reverse();
+  // .map is an ECMAScript5 array method, so it won't work in older browsers - you'd need to use a loop (or a library like underscore) to be supported in older browsers. 
+  var allergenKeys = Object.keys(allergens).map(Number).sort().reverse();
   var allergies = [];
 
   for (var i = 0; i < allergenKeys.length; i++) {
