@@ -1,0 +1,26 @@
+<h2>Search results for: <%= @movie_name %>:</h2>
+
+<ol>
+  <% @results.each do |el| %>
+    <li><a href="/result_show/<%= el["Title"] %>"><%= el["Title"] %></a></li>
+  <% end %>
+</ol>
+
+<div class="window">
+  <div class="slider">
+    <% if @results.length > 3 %>
+      <% 2.times do  %>
+        <% @results.each do |el| %>
+          <a href="/result_show/<%= el["Title"] %>"><img class="poster" src="
+            <% unless el["Poster"] == "N/A"  %>
+              <%= el["Poster"] %>
+            <% else %>
+              http://fillmurray.com/200/300
+            <% end %>
+          "></a>
+        <% end %>
+      <% end %>
+    <% end %>
+  </div>
+
+</div>

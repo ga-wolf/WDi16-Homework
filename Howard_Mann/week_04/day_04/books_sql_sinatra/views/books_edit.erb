@@ -1,0 +1,23 @@
+<h2>Edit Book: <%= @book['title'] %> </h2>
+
+<form action="/books/<%= @book['id'] %>" method = "POST">
+  <p>
+    <label>Title:</label><br>
+    <input type="text" name="title" value= <%= @book['title'] %>>
+  </p>
+  <p>
+    <label>Author:</label><br>
+    <input type="text" name="author" value= <%= @book['author'] %>>
+  </p>
+  <p>
+    <label>Cover:</label><br>
+    <input type="text" name="cover" value= <%= @book['cover'] %>>
+  </p>
+  <p>
+    <label>Price:</label><br>
+    <input type="number" name="price" value= <%= @book['price'] %>>
+  </p>
+
+  <input type="submit" value="Edit Book">
+
+</form>

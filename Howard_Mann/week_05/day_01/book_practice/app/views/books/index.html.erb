@@ -1,0 +1,21 @@
+<h1>Books index page: <%= @books.length %></h1>
+
+<div class="index-container clearfix">
+
+
+    <% @books.each do |el| %>
+      <div class="index-float">
+        <p class="index-title"><a href="/books/<%= el.id %>"><%= el.title %> by <%= el.author %></a></p>
+        <div class="img-container">
+          <a class="cover" href="/books/<%= el.id %>">
+            <% unless el.cover == "" %>
+              <%= image_tag( el.cover ) %><br>
+            <% else %>
+              <%= image_tag("http://fillmurray.com/140/200") %><br>
+            <% end %>
+          </a>
+        </div>
+      </div>
+    <% end %>
+
+</div>

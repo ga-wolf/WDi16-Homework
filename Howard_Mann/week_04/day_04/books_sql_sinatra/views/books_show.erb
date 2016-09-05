@@ -1,0 +1,14 @@
+<h2>Show Book:</h2>
+
+<p>Title: <%= @book['title'] %></p>
+<p>Author: <%= @book['author'] %></p>
+<p>Price: <%= @book['price'] %></p>
+<% unless @book['cover'] == '' %>
+  <img src="<%= @book['cover'] %>">
+<% else %>
+  <img src="http://fillmurray.com/170/200">
+<% end %>
+<hr>
+<a href="/books/<%= @book['id'] %>/edit">Edit Page</a> |
+
+<a class="delete" href="/books/<%= @book['id'] %>/delete">Delete Page</a>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Tic Tac Toe Logic</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Tac Tac Toe Game Logic</h1>
+  <p><em>Open console CMD+OPT+J</em></p>
+  <p>Player turn: <span class="picked">Click below</span></p>
+  <button class="player" id="X">Player X</button>
+  <button class="player" id="O">Player O</button>
+
+
+  <div id="colContainer">
+    <div class="rowLine"></div>
+    <div class="colLine"></div>
+    <div class="diagLine"></div>
+    <div class="col"></div>
+    <div class="col">Col 1</div>
+    <div class="col">Col 2</div>
+    <div class="col">Col 3</div>
+  </div>
+
+
+  <div id="A">
+    <div class="A">A</div>
+    <div class="A0" row="A" num="0">AO</div>
+    <div class="A1" row="A" num="1">A1</div>
+    <div class="A2" row="A" num="2">A2</div>
+  </div>
+  <div id="B">
+    <div class="B">B</div>
+    <div class="B0" row="B" num="0">BO</div>
+    <div class="B1" row="B" num="1">B1</div>
+    <div class="B2" row="B" num="2">B2</div>
+  </div>
+  <div id="C">
+    <div class="C">C</div>
+    <div class="C0" row="C" num="0">CO</div>
+    <div class="C1" row="C" num="1">C1</div>
+    <div class="C2" row="C" num="2">C2</div>
+  </div>
+
+
+  <h2 id="message">Please select a player above</h2>
+  <div id="winner"></div>
+  <button class="replay">Click to Replay</button>
+
+<script src="jquery.js"></script>
+<script src="main.js"></script>
+</body>
+</html>

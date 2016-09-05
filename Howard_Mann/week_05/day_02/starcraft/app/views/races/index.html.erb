@@ -1,0 +1,14 @@
+<h2>Races</h2>
+
+<div class="index-container">
+
+  <% @races.each do |el| %>
+    <div class="race-float">
+      <p><strong><%= el.name %></strong></p>
+      <a href="/races/<%= el.id %>">
+        <%= image_tag( el.image ) %>
+      </a>
+    </div>
+  <% end %>
+
+</div>

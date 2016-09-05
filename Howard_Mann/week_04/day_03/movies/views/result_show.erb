@@ -1,0 +1,17 @@
+<h2>Result show page: <%= @name %></h2>
+
+<h3><%="#{@result_show["Type"].capitalize}:  #{@result_show["Title"]}"  %></h3>
+<p><em><%= @result_show["Plot"] %></em></p>
+<img src="
+<% unless @result_show["Poster"] == "N/A" %>
+  <%= @result_show["Poster"] %>
+<% else %>
+  http://www.placecage.com/gif/200/300
+<% end %>
+
+" alt="movie poster">
+
+<p><strong>Director: </strong><%= @result_show["Director"] %> </p>
+<p><strong>Actors: </strong><%= @result_show["Actors"] %> </p>
+<p><strong>Genre: </strong><%= @result_show["Genre"] %> </p>
+<p><strong>Country: </strong><%= @result_show["Country"] %> </p>

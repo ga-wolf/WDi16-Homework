@@ -1,0 +1,28 @@
+<h2>Show page: <%= @unit.name %></h2>
+
+<div class="show-left">
+  <%= image_tag ( @unit.image ) %><br>
+  <a href="/units/<%= @unit.id %>/edit">Edit Character</a> |
+  <%= link_to( 'Delete Unit', unit_path(@unit), :method => :delete, data: { confirm: "Are you sure?"} ) %>
+</div>
+
+<div class="show-right">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><%= @unit.name %></td>
+    </tr>
+    <tr>
+      <td>Race:</td>
+      <td>
+        <%= link_to( @unit.race.name, race_path(@unit.race.name) ) %>
+      </td>
+    </tr>
+    <tr>
+      <td>Weapon:</td>
+      <td>
+        <%= link_to @unit.weapon.name, weapon_path(@unit.weapon.name) %>
+      </td>
+    </tr>
+  </table>
+</div>

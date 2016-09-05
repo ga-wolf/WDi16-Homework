@@ -1,0 +1,27 @@
+<h1>Edit page: <%= @book.title %></h1>
+
+<form action="/books/<%= @book.id %>" method="POST">
+  <p>
+    <label>Title:</label><br>
+    <input type="text" name="book[title]" value="<%= @book.title %>">
+  </p>
+  <p>
+    <label>Author:</label><br>
+    <input type="text" name="book[author]" value="<%= @book.author %>">
+  </p>
+  <p>
+    <label>Price:</label><br>
+    <input type="float" name="book[price]" value="<%= @book.price %>">
+  </p>
+  <p>
+    <label>Cover:</label><br>
+    <input type="text" name="book[cover]" value="<%= @book.cover %>">
+  </p>
+  <p>
+    <label>Description:</label><br>
+    <input type="text" name="book[description]" value="<%= @book.description %>">
+  </p>
+  <p>
+    <input type="submit" value="Update Book">
+  </p>
+</form>
