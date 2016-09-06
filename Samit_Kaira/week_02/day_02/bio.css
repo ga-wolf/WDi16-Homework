@@ -1,0 +1,25 @@
+.landingPage {
+  background-image: url(http://66.media.tumblr.com/5899ece08d4685b629d99c52310acd70/tumblr_o9aqa9R1Y01qkpd0co1_1280.jpg);
+  background-size: cover;
+  background-position: center;
+  height: 600px;
+  font-family: monospace;
+  position: relative;
+}
+
+nav {
+  background: darkslategray;
+  height: 80px;
+  line-height: 80px;
+  padding-left: 30px;
+  color: ghostwhite;
+  top: 0;
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+}
+
+h1 {
+  padding-top: 100px;
+  text-align: center;
+}

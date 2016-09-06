@@ -1,0 +1,25 @@
+<h1>This is the page of <%= @author.name %></h1>
+<%= image_tag @author.image %>
+
+<ul>
+  <li>Nationality: <%= @author.nationality %></li>
+  <li>DOB: <%= @author.dob.strftime("%A, %B %e, %Y") %></li>
+  <li>Period: <%= @author.period %></li>
+</ul>
+
+<div class="controls">
+  <%= link_to "Edit #{@author.name}","/authors/#{@author.id}/edit" %>
+  <%= link_to "Delete #{@author.name}","/authors/#{@author.id}/delete", :method => :delete, :data => {:confirm => "Are you sure?"} %>
+
+</div>
+
+
+<hr>
+
+<h3>Novels</h3>
+
+<!-- <ul>
+<%# @artist.works.each do |w| %>
+  <li><%#= link_to(w.title, "/works/#{w.id}")%></li>
+<%# end %>
+</ul> -->

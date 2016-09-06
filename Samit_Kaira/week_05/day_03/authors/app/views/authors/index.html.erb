@@ -1,0 +1,13 @@
+<h2>This should show all authors</h2>
+
+<ul>
+  <% @authors.each do |a| %>
+  <li><%= image_tag(a.image) %></li> <!-- the RHS represents the fields within the table -->
+  <ul>
+    <li>Name: <%= link_to(a.name, "/authors/#{a.id}") %></li> <!-- link_to is a rails helper. a.name is the text to be displayed which will be a hyperlink, and the RHS is the destination -->
+    <li>Nationality: <%= a.nationality %></li>
+    <li>DOB: <%= a.dob %></li>
+    <li>Period: <%= a.period %></li>
+  </ul>
+  <% end %>
+</ul>

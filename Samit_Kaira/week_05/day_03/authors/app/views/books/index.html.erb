@@ -1,0 +1,10 @@
+<h1>All Books</h1>
+
+<% @books.each do |w| %>
+<p>
+  <%#= link_to(image_tag(w.image), "/works/#{w.id}") %>
+  <%#= link_to(image_tag(w.image), work_path(w.id)) %>
+  <%= link_to(image_tag(w.image), book_path(w)) %>
+  <%#= link_to(image_tag(w.image), w) %>
+</p>
+<% end %>
