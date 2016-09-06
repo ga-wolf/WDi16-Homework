@@ -1,0 +1,13 @@
+<h2>All authors</h2>
+
+<div>
+  <ul>
+    <% @authors.each do |a| %>
+      <li>Name: <%= link_to( a.name, author_path(a) ) %></li>
+      <li>Nationality: <%= a.nationality %></li>
+      <li>Date of Birth: <%= a.dob %></li>
+      <li>Genre: <%= a.genre %></li>
+      <hr>
+    <% end %>
+    </ul>
+</div>

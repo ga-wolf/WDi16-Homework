@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BooksList</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+  <nav>
+      <%= link_to "all Authors", authors_path %>
+      <%= link_to "Create new Author", new_author_path %>
+      <%= link_to "all Books", books_path %>
+      <%= link_to "Create new book", new_book_path %>
+    </nav>
+
+    <div>
+      <%= yield %>
+    </div>
+
+</body>
+</html>

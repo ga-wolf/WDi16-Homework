@@ -1,0 +1,9 @@
+
+body {
+  background: gainsboro;
+  box-sizing: border-box;
+}
+
+.yield {
+  padding: 0 50px;
+}
