@@ -1,0 +1,19 @@
+<form action="/breeds/<%= @breed["id"]%>" method="post">
+  <p>
+    <lable>Breed: </lable>
+    <input type="text" name="breed" value="<%= @breed['breed']%>">
+  </p>
+  <p>
+    <lable>Image: </lable>
+    <input type="text" name="image" value="<%= @breed['image']%>">
+  </p>
+  <p>
+    <lable>Type: </lable>
+    <input type="text" name="type" value="<%= @breed['type']%>">
+  </p>
+  <p>
+    <lable>Description: </lable>
+    <input type="text" name="description" value="<%= @breed['description']%>">
+  </p>
+  <input type="submit" value="Edit Breed">
+</form>

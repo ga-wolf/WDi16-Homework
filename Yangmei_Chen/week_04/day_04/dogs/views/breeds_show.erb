@@ -1,0 +1,8 @@
+<h2>Dog breed ID: <%= @breed["id"] %></h2>
+<p>Breed: <%= @breed["breed"] %></p>
+<img src="<%= @breed["image"] %>"/>
+<p>Type: <%= @breed["type"] %></p>
+<p>Description: <%= @breed["description"] %></p>
+
+<a href="/breeds/<%= @breed["id"] %>/edit">Edit |</a>
+<a href="/breeds/<%= @breed["id"] %>/delete"> Delete</a>

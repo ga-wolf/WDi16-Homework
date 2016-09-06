@@ -1,0 +1,25 @@
+<h1>Author Information</h1>
+
+<h2><%= @author.name %></h2>
+<%= image_tag( @author.image ) %>
+<p>
+  Nationality: <%= @author.nationality %>
+</p>
+<p>
+  Date of Birth: <%= @author.dob %>
+</p>
+
+<div class="controls">
+  <!-- Edit and delete links go here -->
+  <%= link_to "Edit this Author", edit_author_path( @author.id ) %>
+  <%= link_to "Delete this Author", @author, :method => :delete, :data => { :confirm => "Are you sure?" } %>
+</div>
+
+<hr>
+
+<h3>Books:</h3>
+<ul>
+  <% @author.books.each do |book| %>
+    <li><%= link_to( book.title, book_path ) %></li>
+  <% end %>
+</ul>
