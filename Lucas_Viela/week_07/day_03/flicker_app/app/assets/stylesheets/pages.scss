@@ -1,0 +1,17 @@
+body {
+  font-family: monospace;
+  text-align: center;
+}
+
+input[type=text]{
+  display: block;
+  margin: 0 auto;
+}
+
+input[type=submit]{
+  margin: 10px 0;
+}
+
+.img hover {
+  color: transparent;
+}
