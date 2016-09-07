@@ -1,4 +1,5 @@
 require 'pry'
+require 'rainbow'
 
 puts "Welcome to our calculator"
 
@@ -26,7 +27,7 @@ def add
   seccond_num = gets().to_f
 
   result = first_num + seccond_num #Similar to the debugger in JavaScript
-  puts "The result is #{result}"
+  Rainbow(puts "The result is #{result}").red
 end
 
 def substract
