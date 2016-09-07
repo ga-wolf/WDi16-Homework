@@ -1,18 +1,25 @@
-console.log("Say hi!");
+$(document).ready(function() {
 
-var spacePositionUrl = "http://api.open-notify.org/iss-now.json";
-var peopleOnSpaceUrl = "http://api.open-notify.org/astros.json";
+  var $content = $(".content");
+  var $logitude = $(".logitude");
+  var $latitude = $(".latitude");
 
-var $spaceContent = $(".content");
 
-var peopleOnSpace = function() {
-  $.ajax({
-    dataType: "JSONP",
-    url: url,
-    data: data,
-    success: success
-  }).done(function() {
-    console.log(data);
-  });
+  var getTheSpaceInformation = function() {
+    $.ajax({
+      url: "http://api.open-notify.org/astros.json",
+      type: "GET"
+      dataType: "JSONP",
 
-};
+    }).done(function() {
+      console.log(dataType);
+    });
+  };
+  getTheSpaceInformation();
+
+
+
+
+
+
+});
