@@ -26,6 +26,8 @@ var displaySpacePeople = function(response) {
     $newLi.text(peopleArr[i]["name"]);
     $names.append($newLi);
   }
+  $newLi.text("Furry Fairy???");
+  $names.append($newLi);
 };
 
 //'iss-now.json' display callback for ajax api url
