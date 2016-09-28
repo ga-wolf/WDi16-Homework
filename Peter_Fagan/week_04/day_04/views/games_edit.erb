@@ -1,0 +1,25 @@
+<h2>Edit a game on the list</h2>
+
+<form action="/games/<%= @game["id"] %>" method = "POST">
+  <p>
+    <label>Game: </label>
+    <input type="text" name="name" value="<%= @game["name"] %>">
+  </p>
+  <p>
+    <label>Genre: </label>
+    <input type="text" name="genre" value="<%= @game["genre"] %>">
+  </p>
+  <p>
+    <label>Description: </label>
+    <input type="text" name="description" value="<%= @game["description"] %>">
+  </p>
+  <p>
+    <label>cover </label>
+    <input type="text" name="cover" value="<%= @game["cover"] %>">
+  </p>
+  <p>
+    <label>screenshot </label>
+    <input type="text" name="screenshot" value="<%= @game["screenshot"] %>">
+  </p>
+  <input type="submit" value="edit game">
+</form>

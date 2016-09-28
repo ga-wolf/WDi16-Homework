@@ -1,0 +1,60 @@
+// Prime Factors
+//
+// A prime number is any number greater than one that is only divisible by itself.
+//
+// 1 is not a prime number (it is not greater than 1).
+// 2 is a prime number (it is greater than one and is only evenly divisible by itself and 1).
+// 3 is a prime number (as above).
+// 4 is not a prime number (it is evenly divisible by 2).
+// The prime factors of an integer are the set of prime numbers will divide the integer exactly.
+//
+// Example
+//
+// What are the prime factors of 60?
+//
+// 1 is not a prime number.
+// 2 is a prime number. 60 is evenly divisible by 2 (therefore 2 is a prime factor of 60), and leaves 30.
+// 30 is evenly divisible by 2 (therefore 2 is a prime factor of 60), and leaves 15.
+// 15 is not evenly divisible by 2.
+// 3 is the next prime number. 15 is evenly divisible by 3 (therefore 3 is a prime factor of 60), and leaves 5.
+// 4 is not a prime number.
+// 5 is a prime number. 5 is evenly divisible by 5 (therefore 5 is a prime factor of 50), and leaves 1.
+// When we get to 1, we're done.
+// The prime factors of 60 are 2, 2, 3, 5
+// You can check this yourself:
+//
+// 2 * 2 * 3 * 5
+// = 4 * 15
+// = 60
+// Success!
+// YOUR TASK
+//
+// Write a function in Javascript which takes a number as its argument and returns an array containing the prime factors of that number.
+
+
+
+// Take in a number and divide by a sequence (2,3,5,7,11) try each one to find modulus with n remainder. push that number to an array. work out what the actual division was and then restart the sequence until you end up with a prime number(?? how to do this?)
+
+var primes = [2,3,5,7,11,13,17,19,23,29];
+var startArray = 0;
+
+var prime_factor = function (num) {
+  var results = [];
+
+  // Loop through all of the primes
+    // If the num is evenly divisible, push it into results
+      // Change the value of num to be divided by that prime
+    // Return the results at the end
+
+  for (var i = 0; i < primes.length; i++) {
+    while (num % primes[i] === 0) {
+      results.push(primes[i]);
+      num = num / (primes[i]);
+    }
+  }
+
+  console.log(results);
+  return results;
+};
+
+prime_factor(60);
