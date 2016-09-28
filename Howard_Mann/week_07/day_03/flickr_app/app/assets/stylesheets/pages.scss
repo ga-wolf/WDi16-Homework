@@ -1,0 +1,42 @@
+// Place all the styles related to the Pages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+body {
+  font-family: monospace;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+input[type=text] {
+  display: inline-block;
+  margin: 0 auto;
+}
+
+input[type=submit] {
+  margin: 10px 0;
+}
+
+img {
+  max-width: 200px;
+}
+
+p#page {
+  display: inline-block;
+}
+
+button {
+  display: inline-block;
+}
+
+#container {
+  display: none;
+}
+
+button#prev-page {
+  display: none;
+}
+
+button#next-page {
+  display: none;
+}
