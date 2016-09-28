@@ -1,0 +1,15 @@
+<h1>All Books</h1>
+
+<ul>
+  <% @books.each do |book| %>
+    <li>
+      <%= image_tag(book.image) %>
+      <ul>
+        <li>Title: <%= link_to(book.title, book_path(book)) %></li>
+        <li>Page Count: <%= book.page_count %></li>
+        <li>Publish Date: <%= book.publish_date %></li>
+        <hr>
+      </ul>
+    </li>
+  <% end %>
+</ul>

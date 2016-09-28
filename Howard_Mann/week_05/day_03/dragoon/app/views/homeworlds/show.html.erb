@@ -1,0 +1,8 @@
+<h1>Homeworld: <%= @homeworld.name %></h1>
+
+<p>Races occupying planet:</p>
+<ul>
+  <% @homeworld.races.each do |el|  %>
+    <li><%= link_to el.name, race_path(el.name) %></li>
+  <% end %>
+</ul>

@@ -1,0 +1,15 @@
+<h1>All Authors</h1>
+
+<ul>
+  <% @authors.each do |author| %>
+    <li>
+      <%= image_tag(author.image) %>
+      <ul>
+        <li>Name: <%= link_to(author.name, author_path(author)) %></li>
+        <li>Nationality: <%= author.nationality %></li>
+        <li>Date of Birth: <%= author.dob %></li>
+        <hr>
+      </ul>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Starcraft</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+  <header>
+    <h1>Starcraft Races and Heroes</h1>
+    <nav>
+      <a href="/races">Races</a>
+      <a href="/units">Units</a>
+      <a href="/characters">Characters</a>
+      <a href="/races/new">New Race</a>
+      <a href="/characters/new">New Unit</a>
+
+    </nav>
+  </header>
+  <hr>
+  <div class="container clearfix">
+    <%= yield %>
+  </div>
+  <hr>
+
+</body>
+</html>

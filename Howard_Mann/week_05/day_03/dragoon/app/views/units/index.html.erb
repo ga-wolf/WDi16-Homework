@@ -1,0 +1,12 @@
+<h2>Units</h2>
+
+<div class="index-container">
+
+  <% @units.each do |el| %>
+    <div class="race-float">
+      <p><strong><%= el.name %></strong></p>
+      <%= link_to(image_tag(el.image),unit_path(el.name)) %>
+    </div>
+  <% end %>
+
+</div>

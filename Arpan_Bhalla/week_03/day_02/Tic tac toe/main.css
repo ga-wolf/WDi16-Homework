@@ -1,0 +1,106 @@
+td {
+border: 1px solid black;
+height: 100px;
+width: 100px;
+}
+.clearBoard {
+  height: 60px;
+  width: 20%;
+  border: solid 5px green;
+  background: green;
+  border-radius: 20px;
+  position: absolute;
+  top: 80%;
+  left: 43%;
+}
+input{
+  width:40%;
+  height:30px;
+}
+#player1Details{
+  margin-bottom: 1px;
+}
+#player2Details{
+  margin-bottom: 1px;
+
+}
+
+.playerInput{
+
+  position: absolute;
+  left: 25%;
+  margin-top: 5%;
+
+}
+.createBoard{
+  position: absolute;
+  top: 30%;
+  left: 33%;
+}
+.player1{
+  display: inline-block;
+  margin-right: 100px;
+
+
+}
+.player2{
+  display: inline-block;
+  margin-left: 100px;
+}
+h1{
+  text-align: center;
+}
+.header {
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height:8%;
+  background: #9b9fa5;
+}
+#rules{
+  position: absolute;
+  top: 0;
+  left: 30%;
+  height: 8%;
+  width: 20%;
+  background: #3266C4;
+  display: inline-block;
+
+}
+#newgame{
+  position: absolute;
+  top: 0;
+  left: 10%;
+  height: 8%;
+  width: 20%;
+  background: #3266C4;
+  display: inline-block;
+
+}
+#result{
+  position: absolute;
+  top: 0;
+  left: 50%;
+  height: 8%;
+  width: 20%;
+  background: #3266C4;
+  display: inline-block;
+}
+.logo{
+  position: absolute;
+  top:0;
+  left:0;
+  width:10%;
+  height:8%;
+  z-index:1;
+}
+body{
+  background: #5FBA7D;
+}
+.imagePlayerOne{
+  width:25%;
+}
+.imagePlayerTwo{
+  width:25%;
+}

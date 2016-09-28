@@ -1,0 +1,28 @@
+body{
+  background-color: white;
+  color: green;
+  margin: 1px white;
+  border: 2px solid white;
+  width: 1600 px;
+
+
+  }
+  .menu{
+
+  }
+  nav {
+    background: grey;
+    color: whithe;
+    height: 80px;
+    line-height: 80px;
+    padding-left: 30px;
+    position: fixed;
+    top: 0;
+    left:0;
+    width: 100%;
+    z-index: 1;
+  }
+.content{
+  border: 2px solid white;
+  color:black;
+}

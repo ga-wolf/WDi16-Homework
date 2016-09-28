@@ -1,0 +1,9 @@
+<h2>Weapon classes</h2>
+
+<% @weapons.each do |el| %>
+  <div class="race-float">
+    <h3>
+      <%= link_to(el.name, weapon_path(el.name)) %>
+    </h3>
+  </div>
+<% end %>

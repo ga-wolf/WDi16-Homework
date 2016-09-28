@@ -1,0 +1,10 @@
+<h1>All Heroes</h1>
+
+<div class="hero-index">
+  <% @heroes.each do |el|  %>
+      <p><%= el.name %></p>
+      <a href="/heroes/<%= el.id %>">
+        <%= image_tag( el.image ) %>
+      </a>
+  <% end %>
+</div>

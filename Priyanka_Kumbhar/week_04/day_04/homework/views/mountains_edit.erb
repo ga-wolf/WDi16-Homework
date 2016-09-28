@@ -1,0 +1,20 @@
+<h2>This should show the edit form</h2>
+
+The ID is <%= @mountain["id"] %>
+
+<form action="/mountain/<%= @mountain['id'] %>" method="POST">
+  <!-- p*3>input+label -->
+  <p>
+    <label>Height: </label>
+    <input type="numbar" name="height" value="<%= @mountain['height'] %>">
+  </p>
+  <p>
+    <label>Image: </label>
+    <input type="text" name="image" value="<%= @mountain['image'] %>">
+  </p>
+  <p>
+    <label>Description: </label>
+    <input type="text" name="description" value="<%= @mountain['description'] %>">
+  </p>
+  <input type="submit" value="Edit mountain">
+</form>

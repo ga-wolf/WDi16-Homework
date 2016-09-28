@@ -1,0 +1,46 @@
+nav{
+  width:80px;
+  height:650px;
+margin:0;
+position:fixed;
+  background:#51A39D;
+  text-align: center;
+}
+.text{
+  color:#814374;
+  font-size: 30px;
+  margin-top:200px;
+  line-height: 30px;
+  font-weight: bold;
+}
+.logo{
+  background-image: url('donald.jpeg');
+  background-repeat: no-repeat;
+  margin:30px 300px;
+  width:580px;
+  height:430px;
+  /*border:10px solid hotpink;*/
+
+  position: absolute;
+}
+.imagetext{
+  font-size: 20px;
+  width:580px;
+  height:430px;
+  color:#00FF00;
+  max-width: 30%;
+  opacity: 0;
+  /*text-align: center;*/
+  margin:40px 10px;
+transition:all 0.3s ease;
+}
+.imagetext:hover{
+  /*display:none;*/
+  opacity:1;
+}
+.container{
+  background-color: #B7695C;
+  width:1400px;
+  height:630px;;
+}
+https://youtu.be/75Ju0eM5T2c

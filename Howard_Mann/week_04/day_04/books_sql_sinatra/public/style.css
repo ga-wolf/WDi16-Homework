@@ -1,0 +1,116 @@
+* {
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+}
+
+body {
+  background-color: gainsboro;
+  margin: 0;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+}
+
+.yield {
+  border: 5px solid hotpink;
+  border-radius: 15px;
+  background-color: white;
+  padding: 25px;
+}
+
+img {
+  width: 175px;
+  height: 260px;
+}
+
+header {
+  background-color: hotpink;
+  width: 100%;
+  height: 80px;
+  margin-bottom: 20px;
+}
+
+nav {
+  width: 80%;
+  margin: 0 auto;
+}
+
+nav h1 {
+  float: left;
+  line-height: 80px;
+  color: white;
+  margin: 0;
+}
+
+nav ul {
+  float: right;
+  margin: 0;
+}
+
+nav ul li {
+  display: inline;
+  line-height: 80px;
+}
+
+nav ul li a {
+  text-decoration: none;
+  margin-left: 10px;
+  color: white;
+}
+
+nav ul li a:hover {
+  border-top: 5px solid white;
+}
+
+h2 {
+  text-align: center;
+  font-style: italic;
+}
+
+ul li {
+  list-style: none;
+  line-height: 20px;
+}
+
+.book-container {
+  float: left;
+  width: 300px;
+  text-align: center;
+}
+
+.title {
+  text-decoration: none;
+  font-weight: bold;
+  color: peru;
+}
+
+.title:hover {
+  color: rebeccapurple;
+  cursor: pointer;
+}
+
+.cover {
+  display: none;
+}
+
+.cover:hover {
+  border: 3px solid rebeccapurple;
+}
+
+.badger {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  border: 1px solid tomato;
+}
+
+.badger-quote {
+  font-size: 30px;
+  text-align: center;
+}

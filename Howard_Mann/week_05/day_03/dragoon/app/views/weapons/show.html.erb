@@ -1,0 +1,28 @@
+<h2><%= @weapon.name %> class</h2>
+
+<table>
+  <tr>
+    <td>Races:</td>
+    <td>
+      <% @weapon.races.pluck(:name).uniq.each do |el| %>
+        <%= link_to(el, race_path(el)) %><br>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>Units:</td>
+    <td>
+      <% @weapon.units.each do |el| %>
+        <%= link_to(el.name, unit_path(el.name)) %><br>
+      <% end %>
+    </td>
+  </tr>
+  <tr>
+    <td>Heroes:</td>
+    <td>
+      <% @weapon.characters.each do |el| %>
+        <%= link_to(el.name, character_path(el.name)) %><br>
+      <% end %>
+    </td>
+  </tr>
+</table>

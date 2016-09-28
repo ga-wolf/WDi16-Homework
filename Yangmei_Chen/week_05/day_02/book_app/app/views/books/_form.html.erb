@@ -1,0 +1,23 @@
+<%= form_for @book do |f| %>
+  <p>
+    <%= f.label :title %>
+    <%= f.text_field :title, :required => true %>
+  </p>
+  <p>
+    <%= f.label :page_count %>
+    <%= f.text_field :page_count, :required => true %>
+  </p>
+  <p>
+    <%= f.label :publish_date, "Publish Date" %>
+    <%= f.date_field :publish_date, :required => true %>
+  </p>
+  <p>
+    <%= f.label :image %>
+    <%= f.url_field :image, :required => true %>
+  </p>
+  <p>
+  <%= f.label :author %>
+  <%= f.collection_select(:author_id, Author.all, :id, :name) %>
+</p>
+  <%= f.submit %>
+<% end %>

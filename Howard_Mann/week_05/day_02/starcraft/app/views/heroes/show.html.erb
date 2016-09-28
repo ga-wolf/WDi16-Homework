@@ -1,0 +1,27 @@
+
+<div class="show-left">
+  <%= image_tag ( @hero.image ) %>
+  <%= link_to('Edit',"/heroes/#{@hero.id}/edit") %> |
+  <%= link_to( 'Delete', hero_path(@hero), :method => :delete, data: { confirm: "Are you sure?"} ) %>
+
+</div>
+
+<div class="show-right">
+  <table>
+    <tr>
+      <td>Name:</td>
+      <td><%= @hero.name %></td>
+    </tr>
+    <tr>
+      <td>Race:</td>
+      <td>
+        <%= link_to("#{@hero.race.name}","/races/#{@hero.race.id}") %>
+
+      </td>
+    </tr>
+    <tr>
+      <td>Background:</td>
+      <td><%= @hero.background %></td>
+    </tr>
+  </table>
+</div>

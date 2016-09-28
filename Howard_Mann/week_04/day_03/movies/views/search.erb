@@ -1,0 +1,8 @@
+<form action="/results" method="GET">
+  <p>
+    <label><h2>Search OMDB for movie or TV show:</h2></label><br>
+    <input type="text" name="movie_name">
+    <input type="submit" value="Search">
+  </p>
+  <p><%= @error_message %></p>
+</form>

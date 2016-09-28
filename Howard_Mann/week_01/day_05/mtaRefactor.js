@@ -11,12 +11,14 @@ var Subway = {
 
 // CREATE FUNCTION: planTrip
 var planTrip = function(startLine, startStop, endLine, endStop) {
-  // Naming index positions of stops and Union Square
+  
+  // Create variables for indexOf stops and Union Square
   var startIndex = Subway[startLine].indexOf(startStop);
   var endIndex = Subway[endLine].indexOf(endStop);
   var startUnion = Subway[startLine].indexOf("Union Square");
   var endUnion = Subway[endLine].indexOf("Union Square");
-  // Naming properties
+
+  // Create variable to store properties
   for (var prop in Subway) {
     var startName = startLine;
     var endLine = endLine;
@@ -43,7 +45,10 @@ var planTrip = function(startLine, startStop, endLine, endStop) {
     }
     console.log("You must travel through the following stops on the the "+startName+" line: "+stopsArr.join(', ')+".");
     console.log("Change at Union Square.");
+
+    // Create variable to store number of stops on first line
     var count = stopsArr.length;
+
     if (endIndex < endUnion) {
       var stopsArr = goBackward(endLine, "Union Square", endStop);
     }
@@ -82,8 +87,10 @@ var goBackward = function(startLine, startStop, endStop) {
 };
 
 // RUN JAVASCRIPT
+console.log("\nDifferent station test:");
 planTrip("N","Times Square","6","33rd");
-planTrip("N","Times Square","6","Astor Place");
-planTrip("6","28th","N","34th");
-planTrip("L","1st","6","Grand Central");
+// planTrip("N","Times Square","6","Astor Place");
+// planTrip("6","28th","N","34th");
+// planTrip("L","1st","6","Grand Central");
+console.log("\nSame station test:");
 planTrip("N","Times Square","N","Union Square");

@@ -1,0 +1,36 @@
+<h1>Show book: <%= @book.title %></h1>
+
+<div class="show-container clearfix">
+
+  <div class="left-wrapper">
+    <% unless @book.cover == "" %>
+      <%= image_tag( @book.cover ) %><br>
+    <% else %>
+      <%= image_tag("http://fillmurray.com/140/200") %><br>
+    <% end %>
+    <a href="/books/<%= @book.id %>/edit">Edit</a> |
+    <%= link_to 'Delete', "/books/#{@book.id}/delete", method: :delete, data: {confirm: 'Are you sure?'} %>
+  </div>
+
+  <div class="right-wrapper">
+    <table class="book-table">
+      <tr>
+        <td>Title:</td>
+        <td><%= @book.title %></td>
+      </tr>
+      <tr>
+        <td>Author:</td>
+        <td><%= @book.author %></td>
+      </tr>
+      <tr>
+        <td>Price:</td>
+        <td>A$<%= @book.price %></td>
+      </tr>
+      <tr>
+        <td>Description:</td>
+        <td><%= @book.description %></td>
+      </tr>
+    </table>
+  </div>
+
+</div>
