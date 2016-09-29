@@ -7,13 +7,13 @@ class ApplicationController < ActionController::Base
 
   private
     def fetch_user
+      unless @current_user.present?
+        session[:user_id] = nil
+      end
 
       if session[:user_id]
         @current_user = User.find(session[:user_id])
       end
 
-      unless @current_user.present?
-        session[:user_id] = nil
-      end
     end
 end

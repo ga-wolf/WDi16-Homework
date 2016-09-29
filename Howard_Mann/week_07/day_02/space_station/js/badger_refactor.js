@@ -26,6 +26,8 @@ var displaySpacePeople = function(response) {
     $newLi.text(peopleArr[i]["name"]);
     $names.append($newLi);
   }
+  $newLi.text("Furry Fairy???");
+  $names.append($newLi);
 };
 
 //'iss-now.json' display callback for ajax api url
@@ -75,9 +77,11 @@ var initMap = function() {
 };
 initMap();
 
+
 // Google map custom addmarker callback
+var markers = []; // Create array of markers
 var addGoogleMarker = function(latitude, longitude) {
-  var marker = new google.maps.Marker({
+  marker = new google.maps.Marker({
     position: {
       lat: latitude,
       lng: longitude
@@ -89,6 +93,12 @@ var addGoogleMarker = function(latitude, longitude) {
     lat: latitude,
     lng: longitude
   });
+
+  // Push new marker into array and
+  markers.push(marker);
+  for (var i = 0; i < markers.length - 1; i++) {
+    markers[i].setMap(null);
+  }
 };
 
 // Event listener load api data
