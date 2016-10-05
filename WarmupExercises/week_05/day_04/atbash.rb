@@ -27,7 +27,7 @@ class Atbash
       # Get the character at the i'th element of the reversed alphabet
       cipher_character = @reverse[i]
       # Add that character to the end of the message. (Could also have used the append operator << , which works on both strings and arrays.)
-      message += cipher_character
+      message << cipher_character
     end
     message
   end
