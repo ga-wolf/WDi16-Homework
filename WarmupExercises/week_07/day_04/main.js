@@ -13,7 +13,7 @@ var reverser = function(arr) {
 var flatten = function(arr) {
   var flattened = [];
   for (var i = 0; i < arr.length; i++) {
-    if (arr[i] instanceof(Array)) {
+    if (arr[i] instanceof Array) {
       for (var j = 0; j < arr[i].length; j++) {
         flattened.push(arr[i][j]);
       }
