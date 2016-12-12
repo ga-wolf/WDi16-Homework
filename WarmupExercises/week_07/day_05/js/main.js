@@ -16,7 +16,7 @@ var grains = {
   eachSquare: function() {
     // Our range helpfully gives us both the number representing each square (ie, squares 1, 2, 3 etc through to 64) and the number of times we want to perform the calculation (the length of the array range: 64).
 
-    // For each element in the range, perform an operation (call grains.square, passing in the i'th value of the element in range) and push the result to an array.
+    // For each element in the range, perform an operation (call grains.square(num), passing in each element in the range array as num) and push the result to an array.
     var results = [];
     // Number of grains on every square
     _.each(grains.range, function(i) {
