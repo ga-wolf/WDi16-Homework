@@ -1,0 +1,12 @@
+<h2>Game ID: <%= @game["id"] %></h2>
+
+<h3><%= @game["name"] %></h3>
+<h3><%= @game["genre"] %></h3>
+<h3><%= @game["description"] %></h3>
+
+<h3>Cover</h3>
+<img src="<%= @game['cover'] %>">
+<img src="<%= @game['screenshot'] %>">
+
+<a href="/games/<%= @game['id'] %>/edit">Edit this game</a>
+<a href="/games/<%= @game['id'] %>/delete">Delete this game</a>

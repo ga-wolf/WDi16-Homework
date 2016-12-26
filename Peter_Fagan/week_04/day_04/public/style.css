@@ -1,0 +1,13 @@
+body {
+  font-family: monospace;
+  backgorund gainsboro;
+}
+
+a{
+  color: darkblue;
+}
+
+.container {
+  border: 10px solid black;
+  padding: 20px;
+}
